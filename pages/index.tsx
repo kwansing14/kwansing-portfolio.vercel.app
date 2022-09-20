@@ -2,29 +2,12 @@ import type { NextPage } from 'next';
 import styled from '@emotion/styled';
 import { keyframes } from '@emotion/react';
 
-import { container, subTitleFont, contentFont, blinkingTitle } from '@root/styles';
+import styles from '@root/styles';
 import Background from '@root/components/Layout/Background';
-
-interface StyleProp {
-  delay: number;
-}
+import TextInCodeStyle from '@root/components/Layout/TextInCodeStyle';
+import BlinkingText from '@root/components/Layout/BlinkingText';
 
 const Home: NextPage = () => {
-  const splitText = (text: string) => {
-    const splitText = text.split('');
-    return (
-      <>
-        {splitText.map((x, index) => (
-          <BlinkingSpan key={index} delay={index}>
-            <b>{x}</b>
-          </BlinkingSpan>
-        ))}
-      </>
-    );
-  };
-
-  const codeText = 'if (hungry) {\n  eat() \n}';
-
   return (
     <div>
       <Background>
@@ -32,13 +15,19 @@ const Home: NextPage = () => {
           <div>
             <Left>
               <SmallText>My name is</SmallText>
-              <Title>{splitText('Kwan Sing.')}</Title>
-              <SubTitle>I build stuff.</SubTitle>
+              <BlinkingText>Kwan Sing</BlinkingText>
+              <SubTitle>I build stuff on the web.</SubTitle>
             </Left>
             <Right>
               <CodeContainer>
-                {/* <Header>abc</Header> */}
-                <RightText>{codeText}</RightText>
+                <HeaderButtons>
+                  <button />
+                  <button />
+                  <button />
+                </HeaderButtons>
+                <RightText>
+                  <TextInCodeStyle />
+                </RightText>
               </CodeContainer>
             </Right>
           </div>
@@ -51,23 +40,8 @@ const Home: NextPage = () => {
 export default Home;
 
 const Container = styled.div`
-  ${container}
+  ${styles.container}
   background: none;
-`;
-
-const blinking = keyframes`
-  0% {
-    -webkit-text-fill-color: transparent;
-  }
-  25% {
-    -webkit-text-fill-color: currentColor;
-  }
-  50% {
-    -webkit-text-fill-color: transparent;
-  }
-  100% {
-    -webkit-text-fill-color: currentColor;
-  }
 `;
 
 const Left = styled.div`
@@ -79,18 +53,8 @@ const Left = styled.div`
   flex-direction: column;
   gap: 10px;
 `;
-
-const Title = styled.div`
-  ${blinkingTitle}
-`;
-
 const SubTitle = styled.div`
-  ${subTitleFont}
-`;
-
-const BlinkingSpan = styled.span<StyleProp>`
-  animation: ${blinking} 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-  animation-delay: ${({ delay }) => delay / 10 + 1}s;
+  ${styles.subTitleFont}
 `;
 
 const Right = styled.div`
@@ -111,7 +75,6 @@ const SmallText = styled.div`
 const RightText = styled.div`
   font-size: 16px;
   line-height: 24px;
-  color: #d1d1d1;
   font-family: Source Code Pro;
   white-space: pre;
 `;
@@ -120,7 +83,31 @@ const CodeContainer = styled.div`
   width: 100%;
   background-color: #1e1e1e;
   border-radius: 10px;
-  padding: 16px;
+  padding: 12px;
 `;
 
-const Header = styled.div``;
+const HeaderButtons = styled.div`
+  display: flex;
+  gap: 8px;
+  padding-bottom: 12px;
+
+  button {
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+    border: none;
+    cursor: pointer;
+  }
+
+  button:nth-of-type(1) {
+    background-color: #ed6a5d;
+  }
+
+  button:nth-of-type(2) {
+    background-color: #f4bf4f;
+  }
+
+  button:nth-of-type(3) {
+    background-color: #61c554;
+  }
+`;

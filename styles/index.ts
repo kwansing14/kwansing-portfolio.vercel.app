@@ -24,13 +24,13 @@ interface SizesProp {
   s: string;
 }
 
-export const sizes: SizesProp = {
+const sizes: SizesProp = {
   l: '(max-width: 1260px)',
   m: '(max-width: 768px)',
   s: '(max-width: 480px)',
 };
 
-export const blinkingTitle = css`
+const blinkingTitle = css`
   font-size: 64px;
   white-space: pre-line;
   -webkit-text-fill-color: transparent;
@@ -38,7 +38,7 @@ export const blinkingTitle = css`
   white-space: pre;
 `;
 
-export const titleFont = css`
+const titleFont = css`
   font-size: 56px;
   font-weight: 400;
   line-height: 72px;
@@ -54,7 +54,7 @@ export const titleFont = css`
   }
 `;
 
-export const subTitleFont = css`
+const subTitleFont = css`
   font-size: 16px;
   color: #a4a2a2;
 
@@ -64,7 +64,7 @@ export const subTitleFont = css`
   }
 `;
 
-export const contentFont = css`
+const contentFont = css`
   font-size: 18px;
   font-weight: 400;
   line-height: 34px;
@@ -75,3 +75,14 @@ export const contentFont = css`
     line-height: 24px;
   }
 `;
+
+const styles = {
+  container: container,
+  blinkingTitle: blinkingTitle,
+  titleFont: titleFont,
+  subTitleFont: subTitleFont,
+  contentFont: contentFont,
+  sizes: sizes,
+};
+
+export default styles;
