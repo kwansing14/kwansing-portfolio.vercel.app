@@ -11,8 +11,8 @@ const TextInCodeStyle = () => {
   }
 
   const codeText = 'if (hungry) { eat(); }';
-
-  const splitText = codeText.split(' ');
+  const codeText2 = 'if (tired) { sleep(); }';
+  const codeText3 = 'if (bored) { code(); }';
 
   const checkCode = (x: string) => {
     if (x[0] === '(') {
@@ -50,10 +50,21 @@ const TextInCodeStyle = () => {
 
   return (
     <>
-      {splitText.map((x, index) => {
-        const res = checkCode(x);
-        return <Span1 key={index}>{res}</Span1>;
-      })}
+      <Container>
+        {codeText.split(' ').map((x, index) => (
+          <Span1 key={index}>{checkCode(x)}</Span1>
+        ))}
+      </Container>
+      <br />
+      <br />
+      {codeText2.split(' ').map((x, index) => (
+        <Span1 key={index}>{checkCode(x)}</Span1>
+      ))}
+      <br />
+      <br />
+      {codeText3.split(' ').map((x, index) => (
+        <Span1 key={index}>{checkCode(x)}</Span1>
+      ))}
       <Type />
     </>
   );
@@ -98,6 +109,22 @@ const spanStyle = css`
   line-height: 24px;
   font-family: Source Code Pro;
   white-space: pre;
+`;
+
+const Container = styled.span`
+  position: relative;
+  border: 1px solid white;
+
+  /* ::after {
+    border: 2px solid red;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rebeccapurple;
+  } */
 `;
 
 const Span1 = styled.span`

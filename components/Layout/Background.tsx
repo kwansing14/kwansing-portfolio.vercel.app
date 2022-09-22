@@ -9,6 +9,7 @@ const Background: React.FC<Prop> = ({ children }) => {
     <>
       <Container>
         <DivBlack />
+        <Div5 />
         <Div4 />
         <Div3 />
         <Div2 />
@@ -58,30 +59,40 @@ const DivBlack = styled.div`
 
 const Div2 = styled.div`
   position: absolute;
-  width: 20%;
+  width: 50%;
   aspect-ratio: 1/1;
-  top: 30%;
+  top: 50%;
   left: 10%;
-  background-color: #020248;
+  background-color: #010129;
   border-radius: 50%;
 `;
 
 const Div3 = styled.div`
   position: absolute;
-  width: 40%;
+  width: 60%;
   aspect-ratio: 1/1;
   top: 60%;
-  right: 15%;
-  background-color: #0b190e;
+  right: 0%;
+  background-color: #14190b;
   border-radius: 50%;
 `;
 
 const Div4 = styled.div`
   position: absolute;
+  width: 60%;
+  aspect-ratio: 1/1;
+  top: -20%;
+  right: -25%;
+  background-color: #1a0d0d;
+  border-radius: 50%;
+`;
+
+const Div5 = styled.div`
+  position: absolute;
   width: 50%;
   aspect-ratio: 1/1;
   top: -30%;
-  right: -10%;
-  background-color: #0e031d;
+  left: 5%;
+  background-color: #22221c;
   border-radius: 50%;
 `;

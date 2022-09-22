@@ -1,10 +1,8 @@
 import type { NextPage } from 'next';
 import styled from '@emotion/styled';
-import { keyframes } from '@emotion/react';
 
 import styles from '@root/styles';
 import Background from '@root/components/Layout/Background';
-import TextInCodeStyle from '@root/components/Layout/TextInCodeStyle';
 import BlinkingText from '@root/components/Layout/BlinkingText';
 
 const Home: NextPage = () => {
@@ -18,20 +16,15 @@ const Home: NextPage = () => {
               <BlinkingText>Kwan Sing</BlinkingText>
               <SubTitle>I build stuff on the web.</SubTitle>
             </Left>
-            <Right>
-              <CodeContainer>
-                <HeaderButtons>
-                  <button />
-                  <button />
-                  <button />
-                </HeaderButtons>
-                <RightText>
-                  <TextInCodeStyle />
-                </RightText>
-              </CodeContainer>
-            </Right>
+            <Right>{/* empty for now no idea yet */}</Right>
           </div>
         </Container>
+        <Container2>
+          <div>
+            <Card>lorem ipsum... </Card>
+            <Card>lorem ipsum... </Card>
+          </div>
+        </Container2>
       </Background>
     </div>
   );
@@ -42,6 +35,19 @@ export default Home;
 const Container = styled.div`
   ${styles.container}
   background: none;
+`;
+
+const Container2 = styled.div`
+  ${styles.container}
+  background: #e0e0e0;
+  display: flex;
+  div {
+    color: black;
+    gap: 80px;
+  }
+  width: 100%;
+  justify-content: center;
+  align-items: center;
 `;
 
 const Left = styled.div`
@@ -72,42 +78,17 @@ const SmallText = styled.div`
   font-weight: 700;
 `;
 
-const RightText = styled.div`
-  font-size: 16px;
-  line-height: 24px;
-  font-family: Source Code Pro;
-  white-space: pre;
-`;
-
-const CodeContainer = styled.div`
-  width: 100%;
-  background-color: #1e1e1e;
-  border-radius: 10px;
+const Card = styled.div`
+  height: 400px;
+  width: 300px;
   padding: 12px;
-`;
 
-const HeaderButtons = styled.div`
-  display: flex;
-  gap: 8px;
-  padding-bottom: 12px;
+  border-radius: 10px;
+  background: #e0e0e0;
 
-  button {
-    border-radius: 50%;
-    width: 12px;
-    height: 12px;
-    border: none;
-    cursor: pointer;
+  &:hover {
+    box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
   }
-
-  button:nth-of-type(1) {
-    background-color: #ed6a5d;
-  }
-
-  button:nth-of-type(2) {
-    background-color: #f4bf4f;
-  }
-
-  button:nth-of-type(3) {
-    background-color: #61c554;
-  }
+  transition: box-shadow 0.3s ease-in-out;
+  color: black;
 `;
