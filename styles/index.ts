@@ -42,6 +42,7 @@ const titleFont = css`
   font-size: 56px;
   font-weight: 400;
   line-height: 72px;
+  font-weight: 800;
 
   @media ${sizes.l} {
     font-size: 45px;
