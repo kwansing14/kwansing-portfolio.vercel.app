@@ -1,14 +1,16 @@
-import type { NextPage } from 'next';
 import styled from '@emotion/styled';
 import { keyframes } from '@emotion/react';
-
 import styles from '@root/styles';
+
+type Props = {
+  children: string;
+};
 
 interface StyleProp {
   delay: number;
 }
 
-const BlinkingText: NextPage<{ children: string }> = ({ children }) => {
+const BlinkingText: React.FC<Props> = ({ children }) => {
   const splitText = (text: string) => {
     const splitText = text.split('');
     return (

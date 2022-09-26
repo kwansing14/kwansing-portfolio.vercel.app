@@ -3,10 +3,12 @@ import { css } from '@emotion/react';
 
 export const container = css`
   height: 100vh;
+  width: 100%;
   color: white;
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: #101010;
 
   > div {
     display: flex;
@@ -39,37 +41,55 @@ const blinkingTitle = css`
 `;
 
 const titleFont = css`
-  font-size: 56px;
-  font-weight: 400;
-  line-height: 72px;
+  font-size: 64px;
+  line-height: 96px;
   font-weight: 800;
+  color: white;
 
   @media ${sizes.l} {
-    font-size: 45px;
-    line-height: 55px;
+    font-size: 48px;
+    line-height: 72px;
   }
 
   @media ${sizes.m} {
     font-size: 36px;
+    line-height: 54px;
+  }
+`;
+
+const title2Font = css`
+  font-size: 56px;
+  line-height: 84px;
+  font-weight: 800;
+  color: white;
+
+  @media ${sizes.l} {
+    font-size: 40px;
+    line-height: 60px;
+  }
+
+  @media ${sizes.m} {
+    font-size: 32px;
     line-height: 48px;
   }
 `;
 
 const subTitleFont = css`
-  font-size: 16px;
-  color: #a4a2a2;
+  font-size: 32px;
+  line-height: 48px;
+  color: #d3d3d3;
 
   @media ${sizes.l} {
-    padding: 12px 0;
-    font-size: 14px;
+    font-size: 24px;
   }
 `;
 
 const contentFont = css`
   font-size: 18px;
   font-weight: 400;
-  line-height: 34px;
+  line-height: 27px;
   white-space: pre-wrap;
+  /* color: #646464; */
 
   @media ${sizes.l} {
     font-size: 16px;
@@ -81,6 +101,7 @@ const styles = {
   container: container,
   blinkingTitle: blinkingTitle,
   titleFont: titleFont,
+  title2Font: title2Font,
   subTitleFont: subTitleFont,
   contentFont: contentFont,
   sizes: sizes,

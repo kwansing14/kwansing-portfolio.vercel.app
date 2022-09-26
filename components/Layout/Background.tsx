@@ -1,10 +1,6 @@
 import styled from '@emotion/styled';
 
-interface Prop {
-  children: React.ReactNode;
-}
-
-const Background: React.FC<Prop> = ({ children }) => {
+const Background: React.FC = () => {
   return (
     <>
       <Container>
@@ -15,7 +11,6 @@ const Background: React.FC<Prop> = ({ children }) => {
         <Div2 />
         <BlurDiv />
       </Container>
-      <Children>{children}</Children>
     </>
   );
 };
@@ -29,15 +24,8 @@ const Container = styled.div`
   left: 0;
   overflow: hidden;
   background: none;
-  position: relative;
-`;
-
-const Children = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  background: none;
-  width: 100%;
+  position: fixed;
+  z-index: -1;
 `;
 
 const BlurDiv = styled.div`

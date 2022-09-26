@@ -1,5 +1,6 @@
-import TextInCodeStyle from '@root/components/Layout/TextInCodeStyle';
+import TextInCodeStyle from '@root/components/TextInCode/TextInCodeStyle';
 import styled from '@emotion/styled';
+// import FadeUpWrapper from '@root/components/Animation/FadeUpWrapper';
 
 const CodeComponent = () => {
   return (

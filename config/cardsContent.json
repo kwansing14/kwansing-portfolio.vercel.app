@@ -2,18 +2,22 @@
   {
     "title": "KnoxDao",
     "img": "/static/projects/KnoxDAO.png",
-    "desc": "Sole developer for KnoxDAO project.",
+    "desc": "KnoxDAO. A decentralised autonomous organisation project on Celo blockchain. Sole developer for KnoxDAO project.",
     "link": "https://www.knoxer.xyz/",
     "linkTitle": "KnoxDAO site",
-    "background": "#6AA0A9"
+    "background": "#6AA0A9",
+    "techs": ["typescript", "eslint", "nextjs", "reactjs", "emotion", "vercel", "solidity"],
+    "delay": 4
   },
   {
     "title": "Aleph-Soul",
     "img": "/static/projects/Aleph-Soul.jpeg",
-    "desc": "Part of the development team for Aleph Soul Project.",
+    "desc": "Part of the development team for Aleph Soul Project. Help connecting to Web3 on the react project, and also help with the smart contract development.",
     "link": "https://web3.aleph-labs.com/iwd",
     "linkTitle": "Web3 Aleph IWD site",
-    "background": "#4C6960"
+    "background": "#4C6960",
+    "techs": ["javascript", "eslint", "styledComponents", "web3", "nodejs", "solidity"],
+    "delay": 6
   },
   {
     "title": "Aleph NFT Challenge",
@@ -21,6 +25,8 @@
     "desc": "Winner of the very first NFT Challenge in Aleph.",
     "link": "'https://medium.com/aleph-universe/our-challenge-our-innovation-our-nft-ideas-3197179dc5d1'",
     "linkTitle": "Medium article",
-    "background": "black"
+    "background": "black",
+    "techs": ["javascript", "nextjs", "nodejs", "solidity"],
+    "delay": 8
   }
 ]

@@ -1,15 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from '@emotion/styled';
 import { css, keyframes } from '@emotion/react';
 
 const TextInCodeStyle = () => {
-  const hungry = true;
-  const eat = () => {};
-
-  if (hungry) {
-    eat();
-  }
-
   const codeText = 'if (hungry) { eat(); }';
   const codeText2 = 'if (tired) { sleep(); }';
   const codeText3 = 'if (bored) { code(); }';
@@ -90,14 +83,14 @@ const blinkblink = keyframes`
   }
 `;
 
-const highlight = keyframes`
-  0% {
-    background-color: none;
-  }
-  100% {
-    background-color: #617CA1;
-  }
-`;
+// const highlight = keyframes`
+//   0% {
+//     background-color: none;
+//   }
+//   100% {
+//     background-color: #617CA1;
+//   }
+// `;
 
 const Type = styled.span`
   border-right: 1px solid rgba(255, 255, 255, 0.75);
