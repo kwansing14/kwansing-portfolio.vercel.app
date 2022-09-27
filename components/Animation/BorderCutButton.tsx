@@ -1,15 +1,20 @@
 import styled from '@emotion/styled';
+import Link from 'next/link';
 
 interface Prop {
   children: string | React.ReactNode;
   href?: string;
 }
 
-const BorderCutWrapper: React.FC<Prop> = ({ children }) => {
-  return <Container>{children}</Container>;
+const BorderCutButton: React.FC<Prop> = ({ children, href = '' }) => {
+  return (
+    <Link href={href}>
+      <Container>{children}</Container>
+    </Link>
+  );
 };
 
-export default BorderCutWrapper;
+export default BorderCutButton;
 
 const Container = styled.div`
   height: 40px;

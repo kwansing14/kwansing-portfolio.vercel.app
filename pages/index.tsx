@@ -9,12 +9,12 @@ import Hero from '@root/components/Landing/Hero';
 const Home: NextPage = () => {
   return (
     <>
-      <Container>
+      <Container id='#'>
         <div>
           <Hero />
         </div>
       </Container>
-      <Container2>
+      <Container2 id='about-me'>
         <div>
           <SmallTitle>ABOUT ME</SmallTitle>
           <AboutMe />
@@ -26,7 +26,7 @@ const Home: NextPage = () => {
           <Experiences />
         </div>
       </Container2> */}
-      <Container2>
+      <Container2 id='projects'>
         <div>
           <SmallTitle>PROJECTS</SmallTitle>
           <Cards />
@@ -40,6 +40,7 @@ export default Home;
 
 const Container = styled.div`
   ${styles.container}
+
   > div {
     height: 100%;
   }
@@ -47,6 +48,7 @@ const Container = styled.div`
 
 const Container2 = styled.div`
   ${styles.container}
+  padding-top: 100px;
   height: auto;
   padding-bottom: 60px;
 

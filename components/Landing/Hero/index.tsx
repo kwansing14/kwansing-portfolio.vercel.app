@@ -63,6 +63,9 @@ const Hero = () => {
 
 export default Hero;
 
+const delay = '3s';
+const circleDelay = '2.5s';
+
 const Subtitle = styled.div`
   ${styles.subTitleFont}
 `;
@@ -82,13 +85,13 @@ const Left = styled.div`
 
 const CircleExpand = keyframes`
   0% {
-    transform: scale(0);
+    scale: 0;
   }
   60%{
-    transform: scale(1.05);
+    scale: 1.05;
   }
   100% {
-    transform: scale(1);
+    scale: 1;
   }
 `;
 
@@ -100,7 +103,9 @@ const BigCircle = styled.div`
   width: 500px;
   aspect-ratio: 1/1;
   border-radius: 50%;
-  animation: ${CircleExpand} 1s ease-in-out;
+  scale: 0;
+  animation: ${CircleExpand} 1s ease-in-out forwards;
+  animation-delay: ${circleDelay};
 `;
 
 const Right = styled.div`
@@ -125,7 +130,7 @@ const RightHero = styled.div`
   position: relative;
   rotate: -20deg;
   animation: ${SuperCoolRotation} 1s ease-in-out forwards;
-  animation-delay: 1s;
+  animation-delay: ${delay};
 `;
 
 const SmallExpand = keyframes`
@@ -155,7 +160,7 @@ const Circle = styled.div<CircleProp>`
   align-items: center;
   scale: 0;
   animation: ${SmallExpand} 1s ease-in-out forwards;
-  animation-delay: 1s;
+  animation-delay: ${delay};
 
   svg {
     width: 100%;
@@ -181,5 +186,5 @@ const TypeWriterWrapper = styled.div`
   translate: -50% -50%;
   rotate: 20deg;
   animation: ${TextAntiRotate} 1s ease-in-out forwards;
-  animation-delay: 1s;
+  animation-delay: ${delay};
 `;

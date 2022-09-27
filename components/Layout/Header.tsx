@@ -1,17 +1,19 @@
 import styled from '@emotion/styled';
 import styles from '@root/styles';
 import BorderCutButton from '../Animation/BorderCutButton';
-
+import Link from 'next/link';
 const Header = () => {
   return (
     <Container>
       <div>
-        <div>Kwan.</div>
+        <Link href='/#'>
+          <Button>Kwan.</Button>
+        </Link>
         <div>
-          <BorderCutButton>
+          <BorderCutButton href={'#about-me'}>
             <Button>About Me</Button>
           </BorderCutButton>
-          <BorderCutButton>
+          <BorderCutButton href={'#projects'}>
             <Button>Projects</Button>
           </BorderCutButton>
         </div>
@@ -62,4 +64,5 @@ const Button = styled.div`
   background: none;
   color: white;
   font-size: 12px;
+  cursor: pointer;
 `;

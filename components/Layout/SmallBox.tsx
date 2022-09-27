@@ -9,7 +9,7 @@ const SmallBox = () => {
   useEffect(() => {
     setTimeout(() => {
       setIsTyping(true);
-    }, 1500);
+    }, 1000);
   }, []);
 
   return (
@@ -20,15 +20,7 @@ const SmallBox = () => {
       <BottomRightBox />
       <Intro>
         {isTyping && (
-          <Typewriter
-            words={['Welcome']}
-            loop={1}
-            cursor
-            cursorStyle='_'
-            typeSpeed={70}
-            deleteSpeed={50}
-            delaySpeed={1000}
-          />
+          <Typewriter words={['Welcome']} loop={1} cursor cursorStyle='_' typeSpeed={50} />
         )}
       </Intro>
     </Container>
@@ -60,10 +52,8 @@ const blink = keyframes`
 
 const blinkOff = keyframes`
   0% { opacity: 1; }
-  10% { opacity: 0; }
-  20% { opacity: 1; }
-  50% { opacity: 0; }
-  75% { opacity: 1; }
+  25% { opacity: 0; }
+  50% { opacity: 1; }
   100% { opacity: 0; }
 `;
 
@@ -77,7 +67,7 @@ const Container = styled.div`
   width: 100%;
   background: black;
   animation: ${bgFrame} 0.5s linear forwards;
-  animation-delay: 2.8s;
+  animation-delay: 2s;
 `;
 
 const topLeft = keyframes`
@@ -113,7 +103,7 @@ const TopLeftBox = styled.div`
   left: ${startPoint};
   opacity: 1;
   animation: ${blink} 0.3s linear 0.5s forwards, ${topLeft} 0.3s linear 1s forwards,
-    ${topLeftExpand} 1s linear 2.5s forwards;
+    ${topLeftExpand} 1s linear 2s forwards;
 `;
 
 const topRight = keyframes`
@@ -149,7 +139,7 @@ const TopRightBox = styled.div`
   right: ${startPoint};
   opacity: 1;
   animation: ${blink} 0.3s linear 0.5s forwards, ${topRight} 0.3s linear 1s forwards,
-    ${topRightExpand} 1s linear 2.5s forwards;
+    ${topRightExpand} 1s linear 2s forwards;
 `;
 
 const bottomLeft = keyframes`
@@ -164,7 +154,7 @@ const bottomLeft = keyframes`
 `;
 
 const bottomLeftExpand = keyframes`
-   from {
+  from {
     bottom: calc(50% - 20px);
     left: calc(50% - 60px);
   }
@@ -183,7 +173,7 @@ const BottomLeftBox = styled.div`
   bottom: ${startPoint};
   left: ${startPoint};
   animation: ${blink} 0.3s linear 0.5s forwards, ${bottomLeft} 0.3s linear 1s forwards,
-    ${bottomLeftExpand} 1s linear 2.5s forwards;
+    ${bottomLeftExpand} 1s linear 2s forwards;
 `;
 
 const bottomRight = keyframes`
@@ -217,7 +207,7 @@ const BottomRightBox = styled.div`
   bottom: ${startPoint};
   right: ${startPoint};
   animation: ${blink} 0.3s linear 0.5s forwards, ${bottomRight} 0.3s linear 1s forwards,
-    ${bottomRightExpand} 1s linear 2.5s forwards;
+    ${bottomRightExpand} 1s linear 2s forwards;
 `;
 
 const Intro = styled.div`
@@ -232,5 +222,5 @@ const Intro = styled.div`
   justify-content: center;
   align-items: center;
   opacity: 1;
-  animation: ${blinkOff} 0.3s linear 2.5s forwards;
+  animation: ${blinkOff} 0.3s linear 1.75s forwards;
 `;
