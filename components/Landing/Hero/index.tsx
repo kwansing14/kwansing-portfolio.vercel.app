@@ -18,12 +18,12 @@ interface CircleProp {
 }
 
 const Icons = [
-  { icon: <SiNextdotjs />, top: '70px', left: '100px' },
+  { icon: <SiNextdotjs />, top: '55px', left: '120px' },
+  { icon: <SiTypescript />, top: '55px', left: '390px' },
   { icon: <SiReact />, top: '255px', left: '15px' },
-  { icon: <SiTypescript />, top: '70px', left: '420px' },
   { icon: <SiJavascript />, top: '255px', left: '510px' },
-  { icon: <SiJest />, top: '450px', left: '100px' },
-  { icon: <SiSolidity />, top: '450px', left: '430px' },
+  { icon: <SiJest />, top: '475px', left: '120px' },
+  { icon: <SiSolidity />, top: '475px', left: '390px' },
 ];
 
 const Hero = () => {
@@ -43,7 +43,17 @@ const Hero = () => {
             </Circle>
           ))}
           <TypeWriterWrapper>
-            <BorderCutWrapper>Some Text To be Included</BorderCutWrapper>
+            <BorderCutWrapper>
+              <Typewriter
+                words={['ReactJS', 'NextJS', 'TypeScript', 'Javascript', 'Solidity', 'Jest']}
+                loop={0}
+                cursor
+                cursorStyle='_'
+                typeSpeed={70}
+                deleteSpeed={50}
+                delaySpeed={1000}
+              />
+            </BorderCutWrapper>
           </TypeWriterWrapper>
         </RightHero>
       </Right>
@@ -163,7 +173,7 @@ const TextAntiRotate = keyframes`
 `;
 
 const TypeWriterWrapper = styled.div`
-  width: 400px;
+  width: 300px;
   height: 100px;
   position: absolute;
   top: 50%;

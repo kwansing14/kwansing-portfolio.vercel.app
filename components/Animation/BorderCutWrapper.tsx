@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 
 interface Prop {
-  children: string;
+  children: string | React.ReactNode;
 }
 
 const BorderCutWrapper: React.FC<Prop> = ({ children }) => {
@@ -9,8 +9,6 @@ const BorderCutWrapper: React.FC<Prop> = ({ children }) => {
 };
 
 export default BorderCutWrapper;
-
-const cornerSize = '20px';
 
 const Container = styled.div`
   height: 60px;
