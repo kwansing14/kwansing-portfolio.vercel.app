@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 
 interface Prop {
   children: string | React.ReactNode;
+  href?: string;
 }
 
 const BorderCutWrapper: React.FC<Prop> = ({ children }) => {
@@ -11,7 +12,7 @@ const BorderCutWrapper: React.FC<Prop> = ({ children }) => {
 export default BorderCutWrapper;
 
 const Container = styled.div`
-  height: 60px;
+  height: 40px;
   padding: 20px;
   clip-path: polygon(
     0 10px,
@@ -26,6 +27,7 @@ const Container = styled.div`
   overflow: hidden;
   display: flex;
   align-items: center;
+  cursor: pointer;
 
   ::before {
     content: '';
@@ -55,4 +57,10 @@ const Container = styled.div`
     right: -5px;
     bottom: -7px;
   }
+
+  :hover {
+    background-color: rgb(88, 88, 88);
+    color: white;
+  }
+  transition: all 0.3s ease-in-out;
 `;

@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import styles from '@root/styles';
+import BorderCutButton from '../Animation/BorderCutButton';
 
 const Header = () => {
   return (
@@ -7,8 +8,12 @@ const Header = () => {
       <div>
         <div>Kwan.</div>
         <div>
-          <div>About Me</div>
-          <div>Projects</div>
+          <BorderCutButton>
+            <Button>About Me</Button>
+          </BorderCutButton>
+          <BorderCutButton>
+            <Button>Projects</Button>
+          </BorderCutButton>
         </div>
       </div>
     </Container>
@@ -19,7 +24,7 @@ export default Header;
 
 const Container = styled.div`
   background-color: ${styles.backgroundColor};
-  height: 60px;
+  height: 80px;
   width: 100%;
   color: white;
   position: fixed;
@@ -50,4 +55,11 @@ const Container = styled.div`
     align-items: center;
     gap: 24px;
   }
+`;
+
+const Button = styled.div`
+  border: none;
+  background: none;
+  color: white;
+  font-size: 12px;
 `;

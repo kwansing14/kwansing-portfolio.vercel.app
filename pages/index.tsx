@@ -40,7 +40,6 @@ export default Home;
 
 const Container = styled.div`
   ${styles.container}
-
   > div {
     height: 100%;
   }
