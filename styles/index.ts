@@ -1,6 +1,8 @@
 import { css } from '@emotion/react';
 // import { keyframes } from '@emotion/react';
 
+const backgroundColor = '#101010';
+
 export const container = css`
   height: 100vh;
   width: 100%;
@@ -8,7 +10,7 @@ export const container = css`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #101010;
+  background-color: ${backgroundColor};
 
   > div {
     display: flex;
@@ -98,6 +100,7 @@ const contentFont = css`
 `;
 
 const styles = {
+  backgroundColor: backgroundColor,
   container: container,
   blinkingTitle: blinkingTitle,
   titleFont: titleFont,

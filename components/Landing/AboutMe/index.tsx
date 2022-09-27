@@ -10,14 +10,12 @@ const AboutMe = () => {
       <>
         {first}
         <Link href={json.links.href} target='_blank'>
-          Aleph Labs
+          {json.links.text}
         </Link>
         {second}
       </>
     );
   }, []);
-
-  console.log(content);
 
   return (
     <Container>

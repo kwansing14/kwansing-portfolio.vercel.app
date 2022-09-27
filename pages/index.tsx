@@ -2,18 +2,16 @@ import type { NextPage } from 'next';
 import styled from '@emotion/styled';
 import styles from '@root/styles';
 import Cards from '@root/components/Landing/Cards';
-import AboutMe from '@root/components/AboutMe';
+import AboutMe from '@root/components/Landing/AboutMe';
+import Hero from '@root/components/Landing/Hero';
+// import Experiences from '@root/components/Landing/Experiences';
 
 const Home: NextPage = () => {
   return (
     <>
       <Container>
         <div>
-          <Subtitle>Hi, my name is</Subtitle>
-          <Title>Kwan Sing</Title>
-          <Desc>
-            I build stuff on the web, currently working as a full time front-end developer.
-          </Desc>
+          <Hero />
         </div>
       </Container>
       <Container2>
@@ -22,11 +20,12 @@ const Home: NextPage = () => {
           <AboutMe />
         </div>
       </Container2>
-      <Container2>
+      {/* <Container2>
         <div>
-          <SmallTitle>WORK EXPERIENCES</SmallTitle>
+          <SmallTitle>EXPERIENCES</SmallTitle>
+          <Experiences />
         </div>
-      </Container2>
+      </Container2> */}
       <Container2>
         <div>
           <SmallTitle>PROJECTS</SmallTitle>
@@ -43,9 +42,7 @@ const Container = styled.div`
   ${styles.container}
 
   > div {
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
+    height: 100%;
   }
 `;
 
@@ -62,20 +59,7 @@ const Container2 = styled.div`
   }
 `;
 
-const Subtitle = styled.div`
-  ${styles.subTitleFont}
-`;
-
-const Title = styled.div`
-  ${styles.titleFont}
-`;
-
 const SmallTitle = styled.div`
   ${styles.title2Font}
   padding-bottom: 60px;
-`;
-
-const Desc = styled.div`
-  ${styles.contentFont}
-  padding: 12px 0;
 `;
