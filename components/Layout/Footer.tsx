@@ -6,7 +6,7 @@ import { useIntersecting } from '@root/customHooks/useIntersecting';
 import styles from '@root/styles';
 import Spinner from '@root/components/Animation/Spinner';
 import { SiLinkedin } from 'react-icons/si';
-import BorderCutButton from '../Animation/BorderCutButton';
+// import BorderCutButton from '../Animation/BorderCutButton';
 
 const Footer = () => {
   const ref = useRef(null);
@@ -61,14 +61,27 @@ const Container = styled.div`
   > div {
     height: 100%;
   }
+
+  @media ${styles.sizes.s} {
+    height: 90px;
+  }
 `;
 
 const InnerContainer = styled.div`
   border-top: 1px solid rgb(88, 88, 88);
   width: 100%;
   height: 100%;
-  padding-top: 16px;
   color: rgb(160, 160, 160);
+  margin-bottom: 32px;
+
+  @media ${styles.sizes.s} {
+    display: flex;
+
+    flex-direction: column;
+    > div:last-child {
+      margin-top: auto;
+    }
+  }
 `;
 
 const Row = styled.div`
@@ -144,6 +157,10 @@ const Buttons = styled.div`
   font-size: 12px;
   white-space: nowrap;
   gap: 8px;
+
+  @media ${styles.sizes.s} {
+    padding-top: 7px;
+  }
 `;
 
 const Button = styled.a`
