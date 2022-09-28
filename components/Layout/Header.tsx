@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 import styles from '@root/styles';
 import BorderCutButton from '../Animation/BorderCutButton';
 import Link from 'next/link';
+
 const Header = () => {
   return (
     <Container>
@@ -57,6 +58,12 @@ const Container = styled.div`
     align-items: center;
     gap: 24px;
   }
+
+  @media ${styles.sizes.m} {
+    > div {
+      padding: 0 16px;
+    }
+  }
 `;
 
 const Button = styled.div`
@@ -65,6 +72,7 @@ const Button = styled.div`
   color: white;
   font-size: 12px;
   cursor: pointer;
+  white-space: nowrap;
 `;
 
 const ButtonLeft = styled.div`

@@ -24,7 +24,7 @@ const SmallBox = () => {
           loop={1}
           cursor
           cursorStyle='_'
-          typeSpeed={50}
+          typeSpeed={40}
           delaySpeed={1000}
         />
       </Intro>
@@ -72,7 +72,7 @@ const Container = styled.div<{ zI: number }>`
   width: 100%;
   background: black;
   animation: ${bgFrame} 0.5s linear forwards;
-  animation-delay: 2s;
+  animation-delay: 2.5s;
   z-index: ${({ zI }) => zI};
 `;
 
@@ -228,5 +228,5 @@ const Intro = styled.div`
   justify-content: center;
   align-items: center;
   opacity: 1;
-  animation: ${blinkOff} 0.3s linear 1.75s forwards;
+  animation: ${blinkOff} 0.3s linear 2.2s forwards;
 `;
