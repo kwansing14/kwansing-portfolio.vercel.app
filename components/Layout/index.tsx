@@ -13,7 +13,6 @@ const Layout: React.FC<Props> = ({ children }) => {
   return (
     <Container>
       <Header />
-      {/* <SmallBox /> */}
       {children}
       <BottomRightLinks />
     </Container>
@@ -24,4 +23,5 @@ export default Layout;
 
 const Container = styled.div`
   position: relative;
+  max-width: 100%;
 `;

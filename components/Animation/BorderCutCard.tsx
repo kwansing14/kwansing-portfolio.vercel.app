@@ -1,24 +1,19 @@
 import styled from '@emotion/styled';
-import Link from 'next/link';
 
 interface Prop {
   children: string | React.ReactNode;
   href?: string;
 }
 
-const BorderCutButton: React.FC<Prop> = ({ children, href = '' }) => {
-  return (
-    <Link href={href}>
-      <Container>{children}</Container>
-    </Link>
-  );
+const BorderCutCard: React.FC<Prop> = ({ children }) => {
+  return <Container>{children}</Container>;
 };
 
-export default BorderCutButton;
+export default BorderCutCard;
 
 const Container = styled.div`
-  height: 40px;
-  padding: 0 20px;
+  height: 100%;
+  width: 100%;
   clip-path: polygon(
     0 10px,
     10px 0,
@@ -27,6 +22,7 @@ const Container = styled.div`
     calc(100% - 10px) 100%,
     0 100%
   );
+
   position: relative;
   border: 1px solid rgb(88, 88, 88);
   overflow: hidden;
@@ -63,9 +59,9 @@ const Container = styled.div`
     bottom: -7px;
   }
 
-  :hover {
+  /* :hover {
     background-color: rgb(88, 88, 88);
     color: white;
-  }
+  } */
   transition: all 0.3s ease-in-out;
 `;

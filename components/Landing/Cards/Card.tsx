@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import styles from '@root/styles';
 import FadeUpWrapper from '@root/components/Animation/FadeUpWrapper';
+import BorderCutCard from '@root/components/Animation/BorderCutCard';
 
 import {
   SiNextdotjs,
@@ -38,30 +39,32 @@ const Card: React.FC<prop> = (prop) => {
   const { background, img, title, desc, link, linkTitle, techs, delay, gap } = prop;
   return (
     <CardContainer gap={gap}>
-      <Img background={background}>
-        <img src={img} alt={title} />
-      </Img>
-      <Desc>
-        <FadeUpWrapper delay={delay}>
-          <Text>{desc}</Text>
-          <LinkTo onClick={() => window.open(link, '_blank')}>{linkTitle}</LinkTo>
-          <Skills>
-            {techs?.map((x, i) => (
-              <React.Fragment key={i}>
-                {x === 'nextjs' && <SiNextdotjs />}
-                {x === 'vercel' && <SiVercel />}
-                {x === 'solidity' && <SiSolidity />}
-                {x === 'emotion' && <img src='/static/icons/emotion-icons.png' alt='emotionsh' />}
-                {x === 'nodejs' && <DiNodejsSmall />}
-                {x === 'typescript' && <SiTypescript />}
-                {x === 'javascript' && <SiJavascript />}
-                {x === 'styledComponents' && <SiStyledcomponents />}
-                {x === 'eslint' && <SiEslint />}
-              </React.Fragment>
-            ))}
-          </Skills>
-        </FadeUpWrapper>
-      </Desc>
+      <BorderCutCard>
+        <Img background={background}>
+          <img src={img} alt={title} />
+        </Img>
+        <Desc>
+          <FadeUpWrapper delay={delay}>
+            <Text>{desc}</Text>
+            <LinkTo onClick={() => window.open(link, '_blank')}>{linkTitle}</LinkTo>
+            <Skills>
+              {techs?.map((x, i) => (
+                <React.Fragment key={i}>
+                  {x === 'nextjs' && <SiNextdotjs />}
+                  {x === 'vercel' && <SiVercel />}
+                  {x === 'solidity' && <SiSolidity />}
+                  {x === 'emotion' && <img src='/static/icons/emotion-icons.png' alt='emotionsh' />}
+                  {x === 'nodejs' && <DiNodejsSmall />}
+                  {x === 'typescript' && <SiTypescript />}
+                  {x === 'javascript' && <SiJavascript />}
+                  {x === 'styledComponents' && <SiStyledcomponents />}
+                  {x === 'eslint' && <SiEslint />}
+                </React.Fragment>
+              ))}
+            </Skills>
+          </FadeUpWrapper>
+        </Desc>
+      </BorderCutCard>
     </CardContainer>
   );
 };
@@ -71,11 +74,14 @@ export default Card;
 const CardContainer = styled.div<cardContainerProp>`
   width: ${({ gap }) => gap && `calc((100% - ${gap * 2}px) / 3)`};
   cursor: pointer;
-  border-radius: 12px;
   overflow: hidden;
   transition: all 0.3s ease-in-out;
   color: white;
-  background: #1e1e1e;
+  /* background: #1e1e1e; */
+
+  > div {
+    flex-direction: column;
+  }
 
   @media ${styles.sizes.l} {
     width: calc(50% - 24px);
