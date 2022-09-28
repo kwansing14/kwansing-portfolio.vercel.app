@@ -5,6 +5,8 @@ import styled from '@emotion/styled';
 import { useIntersecting } from '@root/customHooks/useIntersecting';
 import styles from '@root/styles';
 import Spinner from '@root/components/Animation/Spinner';
+import { SiLinkedin } from 'react-icons/si';
+import BorderCutButton from '../Animation/BorderCutButton';
 
 const Footer = () => {
   const ref = useRef(null);
@@ -36,6 +38,12 @@ const Footer = () => {
             </Row>
             <Row>
               <div />
+              <Buttons>
+                <Button href='https://www.linkedin.com/in/kwansing/' target='_blank'>
+                  Linked <SiLinkedin />
+                </Button>
+                <Button href='https://github.com/kwansing14'>Github</Button>
+              </Buttons>
             </Row>
           </InnerContainer>
         )}
@@ -129,6 +137,22 @@ const BottomTextOverlay = styled.div<{ isSpinning: boolean }>`
 `;
 
 const Buttons = styled.div`
-  padding: 4px 8px;
+  padding: 0 8px;
+  padding-top: 12px;
   border-right: 1px solid rgb(88, 88, 88);
+  color: white;
+  font-size: 12px;
+  white-space: nowrap;
+  gap: 8px;
+`;
+
+const Button = styled.a`
+  display: flex;
+  border-bottom: 1px solid rgb(88, 88, 88);
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  cursor: pointer;
+  z-index: 1;
 `;

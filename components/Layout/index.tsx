@@ -14,8 +14,8 @@ const Layout: React.FC<Props> = ({ children }) => {
   return (
     <Container>
       <Header />
-      {children}
       <BottomRightLinks />
+      {children}
       <Footer />
     </Container>
   );
