@@ -11,9 +11,11 @@ import {
   SiJavascript,
   SiStyledcomponents,
   SiEslint,
+  SiReact,
 } from 'react-icons/si';
 import { DiNodejsSmall } from 'react-icons/di';
 import React from 'react';
+import Link from 'next/link';
 
 interface prop {
   background: string;
@@ -46,11 +48,16 @@ const Card: React.FC<prop> = (prop) => {
         <Desc>
           <FadeUpWrapper delay={delay}>
             <Text>{desc}</Text>
-            <LinkTo onClick={() => window.open(link, '_blank')}>{linkTitle}</LinkTo>
+            <Link href={link} passHref>
+              <LinkTo target='_blank' rel='noopener noreferrer'>
+                {linkTitle}
+              </LinkTo>
+            </Link>
             <Skills>
               {techs?.map((x, i) => (
                 <React.Fragment key={i}>
                   {x === 'nextjs' && <SiNextdotjs />}
+                  {x === 'reactjs' && <SiReact />}
                   {x === 'vercel' && <SiVercel />}
                   {x === 'solidity' && <SiSolidity />}
                   {x === 'emotion' && <img src='/static/icons/emotion-icons.png' alt='emotionsh' />}
@@ -77,7 +84,7 @@ const CardContainer = styled.div<cardContainerProp>`
   overflow: hidden;
   transition: all 0.3s ease-in-out;
   color: white;
-  /* background: #1e1e1e; */
+  aspect-ratio: 6 / 9;
 
   > div {
     flex-direction: column;
@@ -90,6 +97,10 @@ const CardContainer = styled.div<cardContainerProp>`
   @media ${styles.sizes.m} {
     width: 100%;
   }
+
+  @media ${styles.sizes.m} {
+    height: 460px;
+  }
 `;
 
 const Img = styled.div<imgProp>`
@@ -100,6 +111,7 @@ const Img = styled.div<imgProp>`
   justify-content: center;
   align-items: center;
   background: ${({ background }) => background};
+  height: 100%;
 
   img {
     height: 100%;
@@ -108,6 +120,23 @@ const Img = styled.div<imgProp>`
 
 const Desc = styled.div`
   padding: 16px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  height: 100%;
+
+  > div {
+    height: 100%;
+    width: 100%;
+  }
+
+  > div > div {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
 `;
 
 const Text = styled.div`
@@ -115,20 +144,19 @@ const Text = styled.div`
   padding-bottom: 6px;
 `;
 
-const LinkTo = styled.div`
+const LinkTo = styled.a`
   ${styles.contentFont}
   text-decoration: underline;
-  padding-bottom: 24px;
-  font-size: 16px;
+  font-size: 12px;
   font-weight: 400;
   line-height: 24px;
+  padding: 10px 0;
 `;
 
 const Skills = styled.div`
   display: flex;
-  align-items: center;
-  justify-content: flex-start;
   gap: 10px;
+  margin-top: auto;
 
   img {
     width: 16px;

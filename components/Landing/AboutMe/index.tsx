@@ -35,4 +35,7 @@ const Content = styled.div`
 
 const Link = styled.a`
   text-decoration: underline;
+  :focus {
+    outline: 0;
+  }
 `;

@@ -7,7 +7,7 @@
     "linkTitle": "KnoxDAO site",
     "background": "#6AA0A9",
     "techs": ["typescript", "eslint", "nextjs", "reactjs", "emotion", "vercel", "solidity"],
-    "delay": 4
+    "delay": 5
   },
   {
     "title": "Aleph-Soul",
@@ -17,16 +17,26 @@
     "linkTitle": "Web3 Aleph IWD site",
     "background": "#4C6960",
     "techs": ["javascript", "eslint", "styledComponents", "web3", "nodejs", "solidity"],
-    "delay": 6
+    "delay": 5
   },
   {
     "title": "Aleph NFT Challenge",
     "img": "/static/projects/Aleph-NFT-Contest.jpeg",
     "desc": "Winner of the very first NFT Challenge in Aleph.",
-    "link": "'https://medium.com/aleph-universe/our-challenge-our-innovation-our-nft-ideas-3197179dc5d1'",
+    "link": "https://medium.com/aleph-universe/our-challenge-our-innovation-our-nft-ideas-3197179dc5d1",
     "linkTitle": "Medium article",
     "background": "black",
     "techs": ["javascript", "nextjs", "nodejs", "solidity"],
-    "delay": 8
+    "delay": 5
+  },
+  {
+    "title": "Portfolio V1",
+    "img": "/static/projects/Portfolio-v1.jpeg",
+    "desc": "My very first portfolio done in 2020.",
+    "link": "https://kwansing14.github.io/portfolio/",
+    "linkTitle": "Website - Portfolio V1",
+    "background": "black",
+    "techs": ["javascript", "reactjs"],
+    "delay": 5
   }
 ]

@@ -28,6 +28,6 @@ const Container = styled.div`
   }
 
   @media ${styles.sizes.m} {
-    gap: 16px;
+    gap: 32px;
   }
 `;
