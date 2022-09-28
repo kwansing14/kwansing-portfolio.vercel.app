@@ -7,7 +7,7 @@ const Header = () => {
     <Container>
       <div>
         <Link href='/#'>
-          <Button>Kwan.</Button>
+          <ButtonLeft>Kwan.</ButtonLeft>
         </Link>
         <div>
           <BorderCutButton href={'#about-me'}>
@@ -64,5 +64,13 @@ const Button = styled.div`
   background: none;
   color: white;
   font-size: 12px;
+  cursor: pointer;
+`;
+
+const ButtonLeft = styled.div`
+  border: none;
+  background: none;
+  color: white;
+  font-size: 16px;
   cursor: pointer;
 `;

@@ -1,6 +1,6 @@
 import Card from '@root/components/Landing/Cards/Card';
 import styled from '@emotion/styled';
-// import styles from '@root/styles';
+import styles from '@root/styles';
 import cardContent from '@root/config/cardsContent.json';
 
 const Cards: React.FC = () => {
@@ -22,4 +22,12 @@ const Container = styled.div`
   justify-content: flex-start;
   flex-wrap: wrap;
   gap: 56px;
+
+  @media ${styles.sizes.l} {
+    gap: 48px;
+  }
+
+  @media ${styles.sizes.m} {
+    gap: 16px;
+  }
 `;

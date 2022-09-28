@@ -5,10 +5,12 @@ import Cards from '@root/components/Landing/Cards';
 import AboutMe from '@root/components/Landing/AboutMe';
 import Hero from '@root/components/Landing/Hero';
 // import Experiences from '@root/components/Landing/Experiences';
+import SmallBox from '@root/components/Layout/SmallBox';
 
 const Home: NextPage = () => {
   return (
     <>
+      <SmallBox />
       <Container id='#'>
         <div>
           <Hero />
@@ -20,12 +22,6 @@ const Home: NextPage = () => {
           <AboutMe />
         </div>
       </Container2>
-      {/* <Container2>
-        <div>
-          <SmallTitle>EXPERIENCES</SmallTitle>
-          <Experiences />
-        </div>
-      </Container2> */}
       <Container2 id='projects'>
         <div>
           <SmallTitle>PROJECTS</SmallTitle>
@@ -40,9 +36,19 @@ export default Home;
 
 const Container = styled.div`
   ${styles.container}
-
   > div {
     height: 100%;
+  }
+
+  @media ${styles.sizes.m} {
+    height: auto;
+    padding-top: 80px;
+    > div {
+      flex-direction: column;
+      width: 100%;
+      align-items: center;
+      height: auto;
+    }
   }
 `;
 

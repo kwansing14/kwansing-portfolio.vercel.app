@@ -12,6 +12,7 @@ import {
   SiEslint,
 } from 'react-icons/si';
 import { DiNodejsSmall } from 'react-icons/di';
+import React from 'react';
 
 interface prop {
   background: string;
@@ -45,8 +46,8 @@ const Card: React.FC<prop> = (prop) => {
           <Text>{desc}</Text>
           <LinkTo onClick={() => window.open(link, '_blank')}>{linkTitle}</LinkTo>
           <Skills>
-            {techs?.map((x) => (
-              <>
+            {techs?.map((x, i) => (
+              <React.Fragment key={i}>
                 {x === 'nextjs' && <SiNextdotjs />}
                 {x === 'vercel' && <SiVercel />}
                 {x === 'solidity' && <SiSolidity />}
@@ -56,7 +57,7 @@ const Card: React.FC<prop> = (prop) => {
                 {x === 'javascript' && <SiJavascript />}
                 {x === 'styledComponents' && <SiStyledcomponents />}
                 {x === 'eslint' && <SiEslint />}
-              </>
+              </React.Fragment>
             ))}
           </Skills>
         </FadeUpWrapper>
@@ -72,16 +73,17 @@ const CardContainer = styled.div<cardContainerProp>`
   cursor: pointer;
   border-radius: 12px;
   overflow: hidden;
-
-  /* &:hover {
-    box-shadow: 15px 15px 15px #868686, -15px -15px 15px #ffffff;
-  } */
-
   transition: all 0.3s ease-in-out;
   color: white;
   background: #1e1e1e;
 
-  /* border: 2px solid #101010; */
+  @media ${styles.sizes.l} {
+    width: calc(50% - 24px);
+  }
+
+  @media ${styles.sizes.m} {
+    width: 100%;
+  }
 `;
 
 const Img = styled.div<imgProp>`

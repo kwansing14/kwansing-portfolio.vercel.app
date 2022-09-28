@@ -1,5 +1,5 @@
+import { useEffect, useState } from 'react';
 import styled from '@emotion/styled';
-import styles from '@root/styles';
 import { keyframes } from '@emotion/react';
 import {
   SiNextdotjs,
@@ -10,6 +10,8 @@ import {
   SiSolidity,
 } from 'react-icons/si';
 import { Typewriter } from 'react-simple-typewriter';
+
+import styles from '@root/styles';
 import BorderCutWrapper from '@root/components/Animation/BorderCutWrapper';
 
 interface CircleProp {
@@ -18,15 +20,23 @@ interface CircleProp {
 }
 
 const Icons = [
-  { icon: <SiNextdotjs />, top: '55px', left: '120px' },
-  { icon: <SiTypescript />, top: '55px', left: '390px' },
-  { icon: <SiReact />, top: '255px', left: '15px' },
-  { icon: <SiJavascript />, top: '255px', left: '510px' },
-  { icon: <SiJest />, top: '475px', left: '120px' },
-  { icon: <SiSolidity />, top: '475px', left: '390px' },
+  { icon: <SiNextdotjs />, top: '12.5%', left: '22%' },
+  { icon: <SiTypescript />, top: '12.5%', left: '68%' },
+  { icon: <SiReact />, top: '45%', left: '5%' },
+  { icon: <SiJavascript />, top: '45%', left: '85%' },
+  { icon: <SiJest />, top: '77.5%', left: '22%' },
+  { icon: <SiSolidity />, top: '77.5%', left: '68%' },
 ];
 
 const Hero = () => {
+  const [isTyping, setIsTyping] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsTyping(true);
+    }, 2500);
+  }, []);
+
   return (
     <>
       <Left>
@@ -44,15 +54,17 @@ const Hero = () => {
           ))}
           <TypeWriterWrapper>
             <BorderCutWrapper>
-              <Typewriter
-                words={['ReactJS', 'NextJS', 'TypeScript', 'Javascript', 'Solidity', 'Jest']}
-                loop={0}
-                cursor
-                cursorStyle='_'
-                typeSpeed={70}
-                deleteSpeed={50}
-                delaySpeed={1000}
-              />
+              {isTyping && (
+                <Typewriter
+                  words={['ReactJS', 'NextJS', 'TypeScript', 'Javascript', 'Solidity', 'Jest']}
+                  loop={0}
+                  cursor
+                  cursorStyle='_'
+                  typeSpeed={70}
+                  deleteSpeed={50}
+                  delaySpeed={1000}
+                />
+              )}
             </BorderCutWrapper>
           </TypeWriterWrapper>
         </RightHero>
@@ -80,7 +92,13 @@ const Desc = styled.div`
 `;
 
 const Left = styled.div`
-  flex: 6;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  @media ${styles.sizes.m} {
+    width: 100%;
+  }
 `;
 
 const CircleExpand = keyframes`
@@ -97,22 +115,38 @@ const CircleExpand = keyframes`
 
 const BigCircle = styled.div`
   position: absolute;
-  top: 40px;
-  left: 40px;
+  top: 50%;
   border: 1px solid rgba(255, 255, 255, 0.3);
-  width: 500px;
+  width: 80%;
   aspect-ratio: 1/1;
   border-radius: 50%;
   scale: 0;
+  translate: 0 -50%;
   animation: ${CircleExpand} 1s ease-in-out forwards;
   animation-delay: ${circleDelay};
 `;
 
 const Right = styled.div`
-  flex: 6;
   position: relative;
   margin-top: 60px;
-  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 600px;
+  height: 600px;
+
+  @media ${styles.sizes.l} {
+    width: 400px;
+    height: 400px;
+  }
+
+  @media ${styles.sizes.m} {
+    margin-top: 0px;
+    margin-bottom: 24px;
+    order: -1;
+    width: 300px;
+    height: 300px;
+  }
 `;
 
 const SuperCoolRotation = keyframes`
@@ -125,12 +159,22 @@ const SuperCoolRotation = keyframes`
 `;
 
 const RightHero = styled.div`
-  width: 580px;
-  height: 580px;
+  width: 600px;
+  height: 600px;
   position: relative;
   rotate: -20deg;
   animation: ${SuperCoolRotation} 1s ease-in-out forwards;
   animation-delay: ${delay};
+
+  @media ${styles.sizes.l} {
+    width: 400px;
+    height: 400px;
+  }
+
+  @media ${styles.sizes.m} {
+    width: 300px;
+    height: 300px;
+  }
 `;
 
 const SmallExpand = keyframes`
@@ -166,6 +210,10 @@ const Circle = styled.div<CircleProp>`
     width: 100%;
     height: 100%;
   }
+
+  @media ${styles.sizes.l} {
+    width: 40px;
+  }
 `;
 
 const TextAntiRotate = keyframes`
@@ -179,7 +227,7 @@ const TextAntiRotate = keyframes`
 
 const TypeWriterWrapper = styled.div`
   width: 300px;
-  height: 100px;
+  height: 120px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -187,4 +235,24 @@ const TypeWriterWrapper = styled.div`
   rotate: 20deg;
   animation: ${TextAntiRotate} 1s ease-in-out forwards;
   animation-delay: ${delay};
+
+  > div {
+    font-size: 32px;
+  }
+
+  @media ${styles.sizes.l} {
+    width: 200px;
+    height: 80px;
+    > div {
+      font-size: 24px;
+    }
+  }
+
+  @media ${styles.sizes.m} {
+    width: 150px;
+    height: 40px;
+    > div {
+      font-size: 16px;
+    }
+  }
 `;

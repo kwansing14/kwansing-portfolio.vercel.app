@@ -5,15 +5,20 @@ import { Typewriter } from 'react-simple-typewriter';
 
 const SmallBox = () => {
   const [isTyping, setIsTyping] = useState(false);
+  const [index, setIndex] = useState(1);
 
   useEffect(() => {
     setTimeout(() => {
       setIsTyping(true);
     }, 1000);
+
+    setTimeout(() => {
+      setIndex(0);
+    }, 2000);
   }, []);
 
   return (
-    <Container>
+    <Container zI={index}>
       <TopLeftBox />
       <TopRightBox />
       <BottomLeftBox />
@@ -57,7 +62,7 @@ const blinkOff = keyframes`
   100% { opacity: 0; }
 `;
 
-const Container = styled.div`
+const Container = styled.div<{ zI: number }>`
   width: 100px;
   height: 100px;
   position: fixed;
@@ -68,6 +73,7 @@ const Container = styled.div`
   background: black;
   animation: ${bgFrame} 0.5s linear forwards;
   animation-delay: 2s;
+  z-index: ${({ zI }) => zI};
 `;
 
 const topLeft = keyframes`
@@ -188,7 +194,7 @@ const bottomRight = keyframes`
 `;
 
 const bottomRightExpand = keyframes`
-   from {
+  from {
     bottom: calc(50% - 20px);
     right: calc(50% - 60px);
   }

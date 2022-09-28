@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-
+// import styles from '@root/styles';
 interface Prop {
   children: string | React.ReactNode;
 }
@@ -11,8 +11,10 @@ const BorderCutWrapper: React.FC<Prop> = ({ children }) => {
 export default BorderCutWrapper;
 
 const Container = styled.div`
-  height: 60px;
-  padding: 20px;
+  /* height: 120px; */
+  height: 100%;
+  padding: 0 48px;
+  font-size: 48px;
   clip-path: polygon(
     0 10px,
     10px 0,
@@ -26,6 +28,7 @@ const Container = styled.div`
   overflow: hidden;
   display: flex;
   align-items: center;
+  justify-content: center;
 
   ::before {
     content: '';

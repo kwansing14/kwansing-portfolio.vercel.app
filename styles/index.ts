@@ -3,6 +3,20 @@ import { css } from '@emotion/react';
 
 const backgroundColor = '#101010';
 
+interface SizesProp {
+  xl: string;
+  l: string;
+  m: string;
+  s: string;
+}
+
+const sizes: SizesProp = {
+  xl: '(max-width: 1200px)',
+  l: '(max-width: 1024px)',
+  m: '(max-width: 768px)',
+  s: '(max-width: 480px)',
+};
+
 export const container = css`
   height: 100vh;
   width: 100%;
@@ -20,19 +34,13 @@ export const container = css`
     max-width: 1400px;
     width: 100%;
   }
+
+  @media ${sizes.m} {
+    > div {
+      padding: 0 16px;
+    }
+  }
 `;
-
-interface SizesProp {
-  l: string;
-  m: string;
-  s: string;
-}
-
-const sizes: SizesProp = {
-  l: '(max-width: 1260px)',
-  m: '(max-width: 768px)',
-  s: '(max-width: 480px)',
-};
 
 const blinkingTitle = css`
   font-size: 64px;
