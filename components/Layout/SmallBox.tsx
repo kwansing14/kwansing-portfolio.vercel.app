@@ -10,7 +10,7 @@ const SmallBox = () => {
   useEffect(() => {
     setTimeout(() => {
       setIsTyping(true);
-    }, 1000);
+    }, 800);
 
     setTimeout(() => {
       setIndex(0);
