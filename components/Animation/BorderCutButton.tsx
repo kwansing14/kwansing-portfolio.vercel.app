@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import Link from 'next/link';
-
+import styles from '@root/styles';
 interface Prop {
   children: string | React.ReactNode;
   href?: string;
@@ -68,4 +68,8 @@ const Container = styled.div`
     color: white;
   }
   transition: all 0.3s ease-in-out;
+
+  @media ${styles.sizes.m} {
+    height: 30px;
+  }
 `;

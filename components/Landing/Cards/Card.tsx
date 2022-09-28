@@ -94,7 +94,7 @@ const CardContainer = styled.div<cardContainerProp>`
     width: calc(50% - 24px);
   }
 
-  @media ${styles.sizes.m} {
+  @media ${styles.sizes.s} {
     width: 100%;
   }
 

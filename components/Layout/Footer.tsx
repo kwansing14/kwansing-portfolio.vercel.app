@@ -36,7 +36,6 @@ const Footer = () => {
             </Row>
             <Row>
               <div />
-              <Buttons>button</Buttons>
             </Row>
           </InnerContainer>
         )}
@@ -55,15 +54,6 @@ const Container = styled.div`
     height: 100%;
   }
 `;
-
-// const blink = keyframes`
-//   0% { opacity: 0; }
-//   10% { opacity: 1; }
-//   20% { opacity: 0; }
-//   50% { opacity: 1; }
-//   75% { opacity: 0; }
-//   100% { opacity: 1; }
-// `;
 
 const InnerContainer = styled.div`
   border-top: 1px solid rgb(88, 88, 88);
@@ -90,6 +80,15 @@ const Row = styled.div`
   > div:nth-of-type(2) {
     display: flex;
   }
+
+  @media ${styles.sizes.s} {
+    flex-direction: column;
+    > div {
+      width: 100%;
+      border-right: 1px solid rgb(88, 88, 88);
+      border-left: 1px solid rgb(88, 88, 88);
+    }
+  }
 `;
 
 const BottomTextOverlay = styled.div<{ isSpinning: boolean }>`
@@ -112,6 +111,20 @@ const BottomTextOverlay = styled.div<{ isSpinning: boolean }>`
     transition: all 1s ease-in-out 0.2s;
     display: flex;
     align-items: center;
+  }
+
+  @media ${styles.sizes.s} {
+    gap: 0px;
+
+    > div:nth-of-type(1) {
+      opacity: 0;
+    }
+
+    > div:nth-of-type(2) {
+      width: 100%;
+      border-right: none;
+      padding: 4px 8px;
+    }
   }
 `;
 

@@ -60,6 +60,7 @@ const Container = styled.div`
   }
 
   @media ${styles.sizes.m} {
+    height: 55px;
     > div {
       padding: 0 16px;
     }

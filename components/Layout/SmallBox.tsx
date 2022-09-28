@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import styled from '@emotion/styled';
 import { keyframes } from '@emotion/react';
 import { Typewriter } from 'react-simple-typewriter';
+import styles from '@root/styles';
 
 const SmallBox = () => {
   const [index, setIndex] = useState(1);
@@ -74,6 +75,11 @@ const Container = styled.div<{ zI: number }>`
   animation: ${bgFrame} 0.5s linear forwards;
   animation-delay: 2.5s;
   z-index: ${({ zI }) => zI};
+
+  @media ${styles.sizes.m} {
+    top: 60px;
+    height: calc(100vh - 60px);
+  }
 `;
 
 const topLeft = keyframes`

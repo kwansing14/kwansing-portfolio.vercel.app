@@ -28,7 +28,6 @@ const Container = styled.div`
   overflow: hidden;
   display: flex;
   align-items: center;
-  cursor: pointer;
 
   ::before {
     content: '';

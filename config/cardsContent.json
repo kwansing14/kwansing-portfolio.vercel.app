@@ -12,7 +12,7 @@
   {
     "title": "Aleph-Soul",
     "img": "/static/projects/Aleph-Soul.jpeg",
-    "desc": "Part of the development team for Aleph Soul Project. Help connecting to Web3 on the react project, and also help with the smart contract development.",
+    "desc": "Developed the ERC721 smart contract for Aleph-Soul project.",
     "link": "https://web3.aleph-labs.com/iwd",
     "linkTitle": "Web3 Aleph IWD site",
     "background": "#4C6960",
