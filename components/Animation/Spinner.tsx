@@ -34,6 +34,6 @@ export default Spinner;
 const Div = styled.div<{ c: number }>`
   border-right: 1px solid rgb(88, 88, 88);
   width: 1px;
-  height: 20px;
+  height: 16px;
   rotate: ${({ c }) => c * 45}deg;
 `;
