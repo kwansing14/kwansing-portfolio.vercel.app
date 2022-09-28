@@ -4,14 +4,9 @@ import { keyframes } from '@emotion/react';
 import { Typewriter } from 'react-simple-typewriter';
 
 const SmallBox = () => {
-  const [isTyping, setIsTyping] = useState(false);
   const [index, setIndex] = useState(1);
 
   useEffect(() => {
-    setTimeout(() => {
-      setIsTyping(true);
-    }, 800);
-
     setTimeout(() => {
       setIndex(0);
     }, 2000);
@@ -24,9 +19,14 @@ const SmallBox = () => {
       <BottomLeftBox />
       <BottomRightBox />
       <Intro>
-        {isTyping && (
-          <Typewriter words={['Welcome']} loop={1} cursor cursorStyle='_' typeSpeed={50} />
-        )}
+        <Typewriter
+          words={['', 'Welcome']}
+          loop={1}
+          cursor
+          cursorStyle='_'
+          typeSpeed={50}
+          delaySpeed={1000}
+        />
       </Intro>
     </Container>
   );
