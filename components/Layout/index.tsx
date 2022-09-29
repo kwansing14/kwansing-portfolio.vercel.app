@@ -4,7 +4,8 @@ import Header from '@root/components/Layout/Header';
 import BottomRight from '@root/components/Layout//BottomRight';
 import Footer from '@root/components/Layout//Footer';
 import TopLeft from '@root/components/Layout/TopLeft';
-import BottomLeft from './BottomLeft';
+import BottomLeft from '@root/components/Layout/BottomLeft';
+import TopRight from '@root/components/Layout/TopRight';
 
 type Props = {
   children: React.ReactNode;
@@ -17,6 +18,7 @@ const Layout: React.FC<Props> = ({ children }) => {
       <BottomLeft />
       <BottomRight />
       <TopLeft />
+      <TopRight />
       {children}
       <Footer />
     </Container>
