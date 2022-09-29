@@ -17,7 +17,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <link rel='manifest' href='/favicon/site.webmanifest' />
         <link rel='mask-icon' href='/favicon/safari-pinned-tab.svg' color='#5bbad5' />
         <meta name='msapplication-TileColor' content='#da532c' />
-        <meta name='theme-color' content='#ffffff' />
+        <meta name='theme-color' content='#101010' />
 
         <meta property='og:title' content='Kwan Sing Portfolio' />
         <meta property='og:type' content='website' />
