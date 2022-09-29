@@ -1,8 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import styled from '@emotion/styled';
 import styles from '@root/styles';
-import { Typewriter } from 'react-simple-typewriter';
-import checkRegion from '@root/utils/regionCheck';
 import format from 'date-fns/format';
 
 const TopRight = () => {
