@@ -30,7 +30,7 @@ export const container = css`
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0 48px;
+    padding: 0 88px;
     max-width: 1400px;
     width: 100%;
   }
@@ -107,6 +107,12 @@ const contentFont = css`
   }
 `;
 
+const systemFont = css`
+  color: #dedede;
+  font-size: 8px;
+  line-height: 12px;
+`;
+
 const styles = {
   backgroundColor: backgroundColor,
   container: container,
@@ -115,6 +121,7 @@ const styles = {
   title2Font: title2Font,
   subTitleFont: subTitleFont,
   contentFont: contentFont,
+  systemFont: systemFont,
   sizes: sizes,
 };
 

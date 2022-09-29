@@ -1,10 +1,9 @@
 import React from 'react';
 import styled from '@emotion/styled';
-// import Background from '@root/components/Layout/Background';
 import Header from '@root/components/Layout/Header';
-// import SmallBox from '@root/components/Layout/SmallBox';
-import BottomRightLinks from './BottomRight';
-import Footer from './Footer';
+import BottomRightLinks from '@root/components/Layout//BottomRight';
+import Footer from '@root/components/Layout//Footer';
+import TopLeft from '@root/components/Layout/TopLeft';
 
 type Props = {
   children: React.ReactNode;
@@ -15,6 +14,7 @@ const Layout: React.FC<Props> = ({ children }) => {
     <Container>
       <Header />
       <BottomRightLinks />
+      <TopLeft />
       {children}
       <Footer />
     </Container>

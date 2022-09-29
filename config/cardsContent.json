@@ -2,10 +2,10 @@
   {
     "title": "KnoxDao",
     "img": "/static/projects/KnoxDAO.png",
-    "desc": "KnoxDAO. A decentralised autonomous organisation project on Celo blockchain. Sole developer for KnoxDAO project.",
+    "desc": "Sole developer for the Knoxers project, using nextjs typescript for frontend development, and solidity for smart contract development.",
     "link": "https://www.knoxer.xyz/",
     "linkTitle": "KnoxDAO site",
-    "background": "#6AA0A9",
+    "background": "black",
     "techs": ["typescript", "eslint", "nextjs", "reactjs", "emotion", "vercel", "solidity"],
     "delay": 5
   },
@@ -15,7 +15,7 @@
     "desc": "Developed the ERC721 smart contract for Aleph-Soul project.",
     "link": "https://web3.aleph-labs.com/iwd",
     "linkTitle": "Web3 Aleph IWD site",
-    "background": "#4C6960",
+    "background": "black",
     "techs": ["javascript", "eslint", "styledComponents", "web3", "nodejs", "solidity"],
     "delay": 5
   },

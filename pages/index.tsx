@@ -5,12 +5,12 @@ import Cards from '@root/components/Landing/Cards';
 import AboutMe from '@root/components/Landing/AboutMe';
 import Hero from '@root/components/Landing/Hero';
 // import Experiences from '@root/components/Landing/Experiences';
-import SmallBox from '@root/components/Layout/SmallBox';
+import LoadingScreen from '@root/components/Layout/LoadingScreen';
 
 const Home: NextPage = () => {
   return (
     <>
-      <SmallBox />
+      <LoadingScreen />
       <Container id='#'>
         <div>
           <Hero />

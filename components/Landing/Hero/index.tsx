@@ -84,6 +84,7 @@ const Subtitle = styled.div`
 
 const Title = styled.div`
   ${styles.titleFont}
+  white-space:nowrap;
 `;
 
 const Desc = styled.div`

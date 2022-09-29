@@ -4,8 +4,8 @@ import { keyframes } from '@emotion/react';
 import { Typewriter } from 'react-simple-typewriter';
 import styles from '@root/styles';
 
-const SmallBox = () => {
-  const [index, setIndex] = useState(1);
+const LoadingScreen = () => {
+  const [index, setIndex] = useState(5);
 
   useEffect(() => {
     setTimeout(() => {
@@ -33,7 +33,7 @@ const SmallBox = () => {
   );
 };
 
-export default SmallBox;
+export default LoadingScreen;
 
 const endPoint = '16px';
 const startPoint = 'calc(50% - 10px)';
