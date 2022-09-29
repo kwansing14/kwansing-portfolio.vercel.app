@@ -142,10 +142,11 @@ const BottomTextOverlay = styled.div<{ isSpinning: boolean }>`
     padding: ${({ isSpinning }) => (isSpinning ? '8px 0' : '8px')};
     overflow: hidden;
     white-space: nowrap;
-    transition: all 1s ease-in-out 0.2s;
+
     display: flex;
     align-items: center;
-    height: 100%;
+    height: ${({ isSpinning }) => (isSpinning ? '40%' : '100%')};
+    transition: all 1s ease-in-out 0.2s, height 0.3s ease-in-out 1.5s;
   }
 
   @media ${styles.sizes.m} {

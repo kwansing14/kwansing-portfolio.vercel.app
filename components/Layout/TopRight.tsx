@@ -7,15 +7,15 @@ const TopRight = () => {
   const [state, setState] = useState(0);
   const [hydrated, setHydrated] = useState(false);
 
-  setInterval(() => {
-    setState((prev) => prev + 1);
-  }, 1000);
-
   const date = format(new Date(), 'dd/MMM/yyyy');
   const time = useMemo(() => format(new Date(), 'hh:mm:ss aaa'), [state]);
 
   useEffect(() => {
     setHydrated(true);
+    const interval = setInterval(() => {
+      setState((prev) => prev + 1);
+    }, 1000);
+    return () => clearInterval(interval);
   }, []);
 
   // const time =
@@ -44,7 +44,6 @@ const Container = styled.div`
   right: 24px;
   white-space: pre;
   z-index: 0;
-  letter-spacing: 2px;
   padding-right: 16px;
   padding-bottom: 8px;
 
@@ -70,8 +69,12 @@ const LineStyle2 = styled.div`
   position: absolute;
   top: 8px;
   right: 3.5px;
-  height: 85%;
+  height: 82%;
   border-right: 1px solid rgb(88, 88, 88);
+
+  @media ${styles.sizes.m} {
+    height: 75%;
+  }
 `;
 
 const Dot = styled.div`

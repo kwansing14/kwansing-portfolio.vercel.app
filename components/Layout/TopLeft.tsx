@@ -30,7 +30,6 @@ const Container = styled.div`
   left: 28px;
   white-space: pre;
   z-index: 0;
-  letter-spacing: 2px;
   padding-top: 8px;
   padding-right: 12px;
   padding-left: 10px;

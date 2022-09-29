@@ -108,9 +108,16 @@ const contentFont = css`
 `;
 
 const systemFont = css`
-  color: #dedede;
+  color: #a5a5a5;
   font-size: 12px;
   line-height: 18px;
+  letter-spacing: 2px;
+
+  @media ${sizes.m} {
+    font-size: 8px;
+    line-height: 12px;
+    letter-spacing: 1px;
+  }
 `;
 
 const styles = {

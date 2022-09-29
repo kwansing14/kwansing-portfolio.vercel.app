@@ -32,24 +32,30 @@ const Container = styled.div`
   bottom: 88px;
   right: 12px;
   cursor: pointer;
+  z-index: 1;
 
   @media ${styles.sizes.m} {
     display: none;
+  }
+
+  &:hover {
+    > div {
+      color: white;
+    }
   }
 `;
 
 const Text = styled.div`
   ${styles.systemFont}
   writing-mode: vertical-rl;
-  letter-spacing: 2px;
   padding: 0 4px;
   padding-bottom: 12px;
+  transition: all 0.3s ease-in-out;
 `;
 
 const Text2 = styled.div<{ copied: boolean }>`
   ${styles.systemFont}
   writing-mode: vertical-rl;
-  letter-spacing: 2px;
   padding: 8px 4px;
   position: absolute;
   top: -8px;
