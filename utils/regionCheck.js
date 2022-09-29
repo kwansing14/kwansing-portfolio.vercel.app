@@ -11,8 +11,6 @@ const checkRegion = () => {
     timeZoneCityToCountry[city] = countries[zones[z].countries[0]].name;
   });
 
-  console.log(timeZoneCityToCountry);
-
   let userRegion;
   let userCity;
   let userCountry;

@@ -6,13 +6,17 @@ import checkRegion from '@root/utils/regionCheck';
 
 const TopLeft = () => {
   const region = checkRegion();
+
   const words = useMemo(() => {
-    return ['', 'Checking\nLocation', `Connected\nfrom:\n${region}`];
+    return ['', '', 'Scanning Location', `Connection from:\n${region}`];
   }, []);
 
   return (
     <Container>
-      <Typewriter words={words} loop={1} cursor cursorStyle='_' typeSpeed={40} delaySpeed={4000} />
+      <Typewriter words={words} loop={1} cursor cursorStyle='_' typeSpeed={40} delaySpeed={2000} />
+      <Dot />
+      <LineStyle />
+      <LineStyle2 />
     </Container>
   );
 };
@@ -21,15 +25,43 @@ export default TopLeft;
 
 const Container = styled.div`
   ${styles.systemFont}
-  position: fixed;
+  position: absolute;
   top: calc(80px + 24px);
-  left: 24px;
+  left: 28px;
   white-space: pre;
-  text-transform: uppercase;
   z-index: 0;
+  letter-spacing: 2px;
+  padding-top: 8px;
+  padding-right: 12px;
+  padding-left: 10px;
+
+  @media ${styles.sizes.m} {
+    top: calc(60px + 24px);
+  }
 `;
 
-// const Line = styled.div`
-//   height: 150px;
-//   border-right: 1px solid rgb(88, 88, 88);
-// `;
+const LineStyle = styled.div`
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 100%;
+  border-top: 1px solid rgb(88, 88, 88);
+`;
+
+const LineStyle2 = styled.div`
+  position: absolute;
+  top: 4px;
+  right: -4px;
+  height: 30%;
+  border-right: 1px solid rgb(88, 88, 88);
+`;
+
+const Dot = styled.div`
+  position: absolute;
+  top: 0px;
+  left: -4px;
+  border: 1px solid rgb(88, 88, 88);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+`;

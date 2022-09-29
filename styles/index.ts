@@ -99,18 +99,18 @@ const contentFont = css`
   font-weight: 400;
   line-height: 27px;
   white-space: pre-wrap;
-  /* color: #646464; */
+  color: #959595;
 
   @media ${sizes.l} {
-    font-size: 16px;
-    line-height: 24px;
+    font-size: 14px;
+    line-height: 18px;
   }
 `;
 
 const systemFont = css`
   color: #dedede;
-  font-size: 8px;
-  line-height: 12px;
+  font-size: 12px;
+  line-height: 18px;
 `;
 
 const styles = {

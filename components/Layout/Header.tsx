@@ -41,7 +41,7 @@ const Container = styled.div`
   > div {
     width: 100%;
     height: 100%;
-    padding: 0 48px;
+    padding: 0 88px;
     max-width: 1400px;
     display: flex;
     justify-content: center;
