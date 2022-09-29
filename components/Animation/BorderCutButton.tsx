@@ -4,14 +4,25 @@ import styles from '@root/styles';
 interface Prop {
   children: string | React.ReactNode;
   href?: string;
+  newTab?: boolean;
 }
 
-const BorderCutButton: React.FC<Prop> = ({ children, href = '' }) => {
-  return (
-    <Link href={href}>
-      <Container>{children}</Container>
-    </Link>
-  );
+const BorderCutButton: React.FC<Prop> = ({ children, href = '', newTab }) => {
+  if (newTab) {
+    return (
+      <Link href={href}>
+        <a target='_blank'>
+          <Container>{children}</Container>
+        </a>
+      </Link>
+    );
+  } else {
+    return (
+      <Link href={href}>
+        <Container>{children}</Container>
+      </Link>
+    );
+  }
 };
 
 export default BorderCutButton;

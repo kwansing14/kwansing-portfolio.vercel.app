@@ -4,16 +4,28 @@ import { SiLinkedin, SiGithub } from 'react-icons/si';
 import { IoMailOutline } from 'react-icons/io5';
 import BorderCutButton from '@root/components/Animation/BorderCutButton';
 
+{
+  /* <Button href='https://www.linkedin.com/in/kwansing/' target='_blank'>
+Linked <SiLinkedin />
+</Button>
+<Button href='https://github.com/kwansing14'>
+Github <SiGithub />
+</Button>
+<Button href='mailto:kwansing@hotmail.sg'>
+Email <IoMailOutline />
+</Button> */
+}
+
 const BottomLeft = () => {
   return (
     <Container>
-      <BorderCutButton>
+      <BorderCutButton href='https://www.linkedin.com/in/kwansing/' newTab>
         <SiLinkedin />
       </BorderCutButton>
-      <BorderCutButton>
+      <BorderCutButton href='https://github.com/kwansing14' newTab>
         <SiGithub />
       </BorderCutButton>
-      <BorderCutButton>
+      <BorderCutButton href='mailto:kwansing@hotmail.sg' newTab>
         <IoMailOutline />
       </BorderCutButton>
       <Dot />
@@ -37,10 +49,12 @@ const Container = styled.div`
   padding-bottom: 18px;
   padding-right: 8px;
 
-  > div:nth-of-type(1),
-  div:nth-of-type(2),
-  div:nth-of-type(3) {
-    padding: 4px 12px;
+  > a {
+    div:nth-of-type(1),
+    div:nth-of-type(2),
+    div:nth-of-type(3) {
+      padding: 4px 12px;
+    }
   }
 
   @media ${styles.sizes.m} {
@@ -60,7 +74,7 @@ const LineStyle2 = styled.div`
   position: absolute;
   bottom: 3.5px;
   right: -1px;
-  height: 10%;
+  height: 9.5%;
   border-right: 1px solid rgb(88, 88, 88);
 `;
 
