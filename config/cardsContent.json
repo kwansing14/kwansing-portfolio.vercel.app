@@ -2,21 +2,33 @@
   {
     "title": "KnoxDao",
     "img": "/static/projects/KnoxDAO.png",
-    "desc": "Sole developer for the Knoxers project, using nextjs typescript for frontend development, and solidity for smart contract development.",
+    "desc": "Sole developer for the Knoxers project, Nextjs Typescript for Frontend, and Solidity for smart contract.",
     "link": "https://www.knoxer.xyz/",
     "linkTitle": "KnoxDAO site",
     "background": "black",
-    "techs": ["typescript", "eslint", "nextjs", "reactjs", "emotion", "vercel", "solidity"],
+    "techs": ["typescript", "eslint", "nextjs", "reactjs", "emotion", "vercel", "solidity", "web3"],
+    "delay": 5
+  },
+  {
+    "title": "Aleph x Standard Chartered",
+    "img": "/static/projects/AlephXSC.png",
+    "desc": "Converting existing S2B platform from EmberJS to ReactJS, converting RESTful API to GraphQL.",
+    "link": "https://www.sc.com/sg/business-channels-access/straight2bank/",
+    "linkTitle": "Online banking platform for business transactions",
+    "link2": "https://s2bssotest.standardchartered.com/unifiedlogin/v2.0/login/index.html#/login",
+    "linkTitle2": "SC s2b login page",
+    "background": "black",
+    "techs": ["javascript", "eslint", "reactjs", "styledCompoennts", "graphql"],
     "delay": 5
   },
   {
     "title": "Aleph-Soul",
     "img": "/static/projects/Aleph-Soul.jpeg",
-    "desc": "Developed the ERC721 smart contract for Aleph-Soul project.",
+    "desc": "Developed the ERC721 smart contract for Aleph-Soul project.   Ensuring front-end is able to interact with the deployed Smart Contract on Polygon.",
     "link": "https://web3.aleph-labs.com/iwd",
     "linkTitle": "Web3 Aleph IWD site",
     "background": "black",
-    "techs": ["javascript", "eslint", "styledComponents", "web3", "nodejs", "solidity"],
+    "techs": ["javascript", "eslint", "styledComponents", "nodejs", "solidity", "web3"],
     "delay": 5
   },
   {
@@ -26,7 +38,7 @@
     "link": "https://medium.com/aleph-universe/our-challenge-our-innovation-our-nft-ideas-3197179dc5d1",
     "linkTitle": "Medium article",
     "background": "black",
-    "techs": ["javascript", "nextjs", "nodejs", "solidity"],
+    "techs": ["javascript", "nextjs", "nodejs", "solidity", "web3"],
     "delay": 5
   },
   {

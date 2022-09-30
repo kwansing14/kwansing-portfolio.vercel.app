@@ -12,6 +12,7 @@ import {
   SiStyledcomponents,
   SiEslint,
   SiReact,
+  SiGraphql,
 } from 'react-icons/si';
 import { DiNodejsSmall } from 'react-icons/di';
 import React from 'react';
@@ -21,9 +22,11 @@ interface prop {
   background: string;
   title: string;
   desc: string;
-  link: string;
   img: string;
+  link: string;
   linkTitle: string;
+  link2?: string;
+  linkTitle2?: string;
   techs: string[];
   delay: number;
   gap: number;
@@ -38,7 +41,8 @@ interface cardContainerProp {
 }
 
 const Card: React.FC<prop> = (prop) => {
-  const { background, img, title, desc, link, linkTitle, techs, delay, gap } = prop;
+  const { background, img, title, desc, link, linkTitle, link2, linkTitle2, techs, delay, gap } =
+    prop;
   return (
     <CardContainer gap={gap}>
       <BorderCutCard>
@@ -53,6 +57,13 @@ const Card: React.FC<prop> = (prop) => {
                 {linkTitle}
               </LinkTo>
             </Link>
+            {link2 && (
+              <Link href={link2} passHref>
+                <LinkTo target='_blank' rel='noopener noreferrer'>
+                  {linkTitle2}
+                </LinkTo>
+              </Link>
+            )}
             <Skills>
               {techs?.map((x, i) => (
                 <React.Fragment key={i}>
@@ -62,10 +73,12 @@ const Card: React.FC<prop> = (prop) => {
                   {x === 'solidity' && <SiSolidity />}
                   {x === 'emotion' && <img src='/static/icons/emotion-icons.png' alt='emotionsh' />}
                   {x === 'nodejs' && <DiNodejsSmall />}
+                  {x === 'graphql' && <SiGraphql />}
                   {x === 'typescript' && <SiTypescript />}
                   {x === 'javascript' && <SiJavascript />}
                   {x === 'styledComponents' && <SiStyledcomponents />}
                   {x === 'eslint' && <SiEslint />}
+                  {x === 'web3' && <Web3>web3</Web3>}
                 </React.Fragment>
               ))}
             </Skills>
@@ -111,7 +124,7 @@ const Img = styled.div<imgProp>`
   justify-content: center;
   align-items: center;
   background: ${({ background }) => background};
-  height: 100%;
+  height: 60%;
 
   img {
     height: 100%;
@@ -125,7 +138,7 @@ const Desc = styled.div`
   justify-content: flex-start;
   align-items: flex-start;
   width: 100%;
-  height: 100%;
+  height: 40%;
 
   > div {
     height: 100%;
@@ -150,7 +163,8 @@ const LinkTo = styled.a`
   font-size: 12px;
   font-weight: 400;
   line-height: 24px;
-  padding: 10px 0;
+  padding-top: 4px;
+  margin: 0;
 `;
 
 const Skills = styled.div`
@@ -162,4 +176,17 @@ const Skills = styled.div`
     width: 16px;
     height: 16px;
   }
+`;
+
+const Web3 = styled.div`
+  height: 17px;
+  font-size: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 0 2px;
+  border-radius: 2px;
+  background-color: white;
+  color: black;
+  font-weight: bold;
 `;

@@ -95,14 +95,14 @@ const subTitleFont = css`
 `;
 
 const contentFont = css`
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 400;
-  line-height: 27px;
+  line-height: 21px;
   white-space: pre-wrap;
   color: #959595;
 
   @media ${sizes.l} {
-    font-size: 14px;
+    font-size: 12px;
     line-height: 18px;
   }
 `;
