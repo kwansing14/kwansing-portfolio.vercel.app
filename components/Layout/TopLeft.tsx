@@ -37,6 +37,10 @@ const Container = styled.div`
   @media ${styles.sizes.m} {
     top: calc(60px + 24px);
   }
+
+  @media ${styles.sizes.s} {
+    display: none;
+  }
 `;
 
 const LineStyle = styled.div`

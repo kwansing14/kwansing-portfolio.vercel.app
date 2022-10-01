@@ -49,4 +49,6 @@ const Wrapper = styled.div<StyledProps>`
   white-space: pre-wrap;
 `;
 
-const Div = styled.div``;
+const Div = styled.div`
+  width: 100%;
+`;

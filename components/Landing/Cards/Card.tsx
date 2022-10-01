@@ -1,22 +1,12 @@
+import React, { useState } from 'react';
+import Link from 'next/link';
+
 import styled from '@emotion/styled';
 import styles from '@root/styles';
 import FadeUpWrapper from '@root/components/Animation/FadeUpWrapper';
 import BorderCutCard from '@root/components/Animation/BorderCutCard';
-
-import {
-  SiNextdotjs,
-  SiVercel,
-  SiSolidity,
-  SiTypescript,
-  SiJavascript,
-  SiStyledcomponents,
-  SiEslint,
-  SiReact,
-  SiGraphql,
-} from 'react-icons/si';
-import { DiNodejsSmall } from 'react-icons/di';
-import React from 'react';
-import Link from 'next/link';
+import Techs from '@root/components/Landing/Cards/Techs';
+import useStore from '@root/store';
 
 interface prop {
   background: string;
@@ -41,46 +31,60 @@ interface cardContainerProp {
 }
 
 const Card: React.FC<prop> = (prop) => {
+  const store = useStore();
   const { background, img, title, desc, link, linkTitle, link2, linkTitle2, techs, delay, gap } =
     prop;
+  const [hover, setHover] = useState(false);
+
   return (
-    <CardContainer gap={gap}>
+    <CardContainer
+      gap={gap}
+      onMouseEnter={() => {
+        setHover(true);
+        store.setIsHoveringCard(true);
+      }}
+      onMouseLeave={() => {
+        setHover(false);
+        store.setIsHoveringCard(false);
+      }}
+    >
       <BorderCutCard>
         <Img background={background}>
-          <img src={img} alt={title} />
+          <Link href={link} passHref>
+            <ImgLink target='_blank' rel='noopener noreferrer'>
+              <img src={img} alt={title} />
+            </ImgLink>
+          </Link>
         </Img>
         <Desc>
+          <HoverEffectTR hover={hover} />
+          <HoverEffectTL hover={hover} />
+          <HoverEffectBL hover={hover} />
+          <HoverEffectBR hover={hover} />
+          {/* <CardBubbles hover={hover} /> */}
           <FadeUpWrapper delay={delay}>
             <Text>{desc}</Text>
-            <Link href={link} passHref>
-              <LinkTo target='_blank' rel='noopener noreferrer'>
-                {linkTitle}
-              </LinkTo>
-            </Link>
-            {link2 && (
-              <Link href={link2} passHref>
+            <div>
+              <Link href={link} passHref>
                 <LinkTo target='_blank' rel='noopener noreferrer'>
-                  {linkTitle2}
+                  {linkTitle}
                 </LinkTo>
               </Link>
+            </div>
+            {link2 && (
+              <div>
+                <Link href={link2} passHref>
+                  <LinkTo target='_blank' rel='noopener noreferrer'>
+                    {linkTitle2}
+                  </LinkTo>
+                </Link>
+              </div>
             )}
-            <Skills>
-              {techs?.map((x, i) => (
-                <React.Fragment key={i}>
-                  {x === 'nextjs' && <SiNextdotjs />}
-                  {x === 'reactjs' && <SiReact />}
-                  {x === 'vercel' && <SiVercel />}
-                  {x === 'solidity' && <SiSolidity />}
-                  {x === 'emotion' && <img src='/static/icons/emotion-icons.png' alt='emotionsh' />}
-                  {x === 'nodejs' && <DiNodejsSmall />}
-                  {x === 'graphql' && <SiGraphql />}
-                  {x === 'typescript' && <SiTypescript />}
-                  {x === 'javascript' && <SiJavascript />}
-                  {x === 'styledComponents' && <SiStyledcomponents />}
-                  {x === 'eslint' && <SiEslint />}
-                  {x === 'web3' && <Web3>web3</Web3>}
-                </React.Fragment>
-              ))}
+            <Skills
+              onMouseEnter={() => store.setIsHoveringTechs(true)}
+              onMouseLeave={() => store.setIsHoveringTechs(false)}
+            >
+              <Techs techs={techs} />
             </Skills>
           </FadeUpWrapper>
         </Desc>
@@ -93,8 +97,6 @@ export default Card;
 
 const CardContainer = styled.div<cardContainerProp>`
   width: ${({ gap }) => gap && `calc((100% - ${gap * 2}px) / 3)`};
-  cursor: pointer;
-  overflow: hidden;
   transition: all 0.3s ease-in-out;
   color: white;
   aspect-ratio: 6 / 9;
@@ -120,12 +122,16 @@ const Img = styled.div<imgProp>`
   overflow: hidden;
   width: 100%;
   aspect-ratio: 16/12;
+
+  background: ${({ background }) => background};
+  height: 60%;
+`;
+
+const ImgLink = styled.a`
   display: flex;
   justify-content: center;
   align-items: center;
-  background: ${({ background }) => background};
-  height: 60%;
-
+  height: 100%;
   img {
     height: 100%;
   }
@@ -139,10 +145,11 @@ const Desc = styled.div`
   align-items: flex-start;
   width: 100%;
   height: 40%;
+  background: #101010;
+  position: relative;
 
   > div {
     height: 100%;
-    width: 100%;
   }
 
   > div > div {
@@ -150,6 +157,50 @@ const Desc = styled.div`
     display: flex;
     flex-direction: column;
   }
+`;
+
+const HoverEffectTR = styled.span<{ hover: boolean }>`
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  border-right: 1px solid rgb(88, 88, 88);
+  border-top: 1px solid rgb(88, 88, 88);
+  width: ${({ hover }) => (hover ? '16px' : '0px')};
+  height: ${({ hover }) => (hover ? '16px' : '0px')};
+  transition: all 0.3s ease-in-out;
+`;
+
+const HoverEffectTL = styled.span<{ hover: boolean }>`
+  position: absolute;
+  top: 8px;
+  left: 12px;
+  border-left: 1px solid rgb(88, 88, 88);
+  border-top: 1px solid rgb(88, 88, 88);
+  width: ${({ hover }) => (hover ? '16px' : '0px')};
+  height: ${({ hover }) => (hover ? '16px' : '0px')};
+  transition: all 0.3s ease-in-out;
+`;
+
+const HoverEffectBL = styled.span<{ hover: boolean }>`
+  position: absolute;
+  bottom: 8px;
+  left: 12px;
+  border-left: 1px solid rgb(88, 88, 88);
+  border-bottom: 1px solid rgb(88, 88, 88);
+  width: ${({ hover }) => (hover ? '16px' : '0px')};
+  height: ${({ hover }) => (hover ? '16px' : '0px')};
+  transition: all 0.3s ease-in-out;
+`;
+
+const HoverEffectBR = styled.span<{ hover: boolean }>`
+  position: absolute;
+  bottom: 8px;
+  right: 12px;
+  border-right: 1px solid rgb(88, 88, 88);
+  border-bottom: 1px solid rgb(88, 88, 88);
+  width: ${({ hover }) => (hover ? '16px' : '0px')};
+  height: ${({ hover }) => (hover ? '16px' : '0px')};
+  transition: all 0.3s ease-in-out;
 `;
 
 const Text = styled.div`
@@ -176,17 +227,4 @@ const Skills = styled.div`
     width: 16px;
     height: 16px;
   }
-`;
-
-const Web3 = styled.div`
-  height: 17px;
-  font-size: 8px;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  padding: 0 2px;
-  border-radius: 2px;
-  background-color: white;
-  color: black;
-  font-weight: bold;
 `;

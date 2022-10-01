@@ -24,7 +24,8 @@ export const container = css`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: ${backgroundColor};
+  /* background-color: ${backgroundColor}; */
+  background: none;
 
   > div {
     display: flex;
