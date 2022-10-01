@@ -42,9 +42,14 @@ interface StyleProp {
   y: number;
 }
 
+const widthExpand0 = keyframes`
+  from { width: 0px; }
+  to { width: calc(100%); }
+`;
+
 const widthExpand1 = keyframes`
   from { width: 0px; }
-  to { width: 100%; }
+  to { width: calc(100% - 32px); }
 `;
 
 const widthExpand2 = keyframes`
@@ -53,7 +58,7 @@ const widthExpand2 = keyframes`
     opacity: 1
   }
   to { 
-    width: calc(100% - 14px); 
+    width: calc(100% - 46px); 
     opacity: 1;
   }
 `;
@@ -63,9 +68,11 @@ const Container = styled.div<StyleProp>`
   display: ${({ h }) => (h ? 'flex' : 'none')};
   top: ${({ y }) => y - 32}px;
   left: ${({ x }) => x + 12}px;
-  height: 33px;
+  height: 40px;
+  padding-top: 8px;
   padding-left: 32px;
-  padding-right: 4px;
+  padding-right: 32px;
+  background: ${({ h2 }) => (h2 ? 'rgba(0, 0, 0, 0.2)' : '0')};
   z-index: 4;
   color: white;
   font-size: 12px;
@@ -89,7 +96,7 @@ const DiagonalLine = styled.div<{ h: boolean }>`
     height: 1px;
     background: white;
     width: 0px;
-    animation: ${widthExpand1} 0.3s ease-in-out forwards;
+    animation: ${widthExpand0} 0.3s ease-in-out forwards;
   }
 `;
 
