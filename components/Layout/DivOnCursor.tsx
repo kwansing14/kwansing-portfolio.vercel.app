@@ -28,7 +28,7 @@ const DivOnCursor = () => {
       <LineStyle h={store.cursorText !== ''} />
       <LineStyle2 h={store.cursorText !== ''} />
       <DiagonalLine h={store.cursorText !== ''} />
-      <DotStyle h={store.isHoveringCard} />
+      {/* <DotStyle h={store.isHoveringCard} /> */}
     </Container>
   );
 };
