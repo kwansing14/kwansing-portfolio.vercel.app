@@ -6,7 +6,16 @@
     "link": "https://www.knoxer.xyz/",
     "linkTitle": "KnoxDAO site",
     "background": "black",
-    "techs": ["typescript", "eslint", "nextjs", "reactjs", "emotion", "vercel", "solidity", "web3"],
+    "techs": [
+      "typescript",
+      "eslint",
+      "nextjs",
+      "reactjs",
+      "emotion",
+      "vercel",
+      "solidity",
+      "web3"
+    ],
     "delay": 5
   },
   {
@@ -28,13 +37,20 @@
     "link": "https://web3.aleph-labs.com/iwd",
     "linkTitle": "Web3 Aleph IWD site",
     "background": "black",
-    "techs": ["javascript", "eslint", "styledComponents", "nodejs", "solidity", "web3"],
+    "techs": [
+      "javascript",
+      "eslint",
+      "styledComponents",
+      "nodejs",
+      "solidity",
+      "web3"
+    ],
     "delay": 5
   },
   {
     "title": "Aleph NFT Challenge",
     "img": "/static/projects/Aleph-NFT-Contest.jpeg",
-    "desc": "Winner of the very first NFT Challenge in Aleph.",
+    "desc": "Winner of the very first NFT Challenge in Aleph. Won this challenge by creating an entire working NFT collections deployed on Rinkeby Network with a ERC721 smart contract, with a front-end, allowing users to mint with metamask and view minted NFT on opensea.",
     "link": "https://medium.com/aleph-universe/our-challenge-our-innovation-our-nft-ideas-3197179dc5d1",
     "linkTitle": "Medium article",
     "background": "black",
