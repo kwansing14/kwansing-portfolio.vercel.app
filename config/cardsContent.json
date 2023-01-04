@@ -1,5 +1,15 @@
 [
   {
+    "title": "Aleph Homepage",
+    "img": "/static/projects/Aleph-labs-homepage.png",
+    "desc": "Setting up file structure based for Aleph Labs Homepage, using Nextjs and developed 60% content.",
+    "link": "https://aleph-labs.com/",
+    "linkTitle": "Aleph Labs site",
+    "background": "black",
+    "techs": ["typescript", "nextjs", "emotion"],
+    "delay": 5
+  },
+  {
     "title": "KnoxDao",
     "img": "/static/projects/KnoxDAO.png",
     "desc": "Sole developer for the Knoxers project, Nextjs Typescript for Frontend, and Solidity for smart contract.",
