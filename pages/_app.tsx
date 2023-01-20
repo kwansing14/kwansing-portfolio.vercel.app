@@ -3,8 +3,35 @@ import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import Layout from '@root/components/Layout';
 import { Analytics } from '@vercel/analytics/react';
+import { useRouter } from 'next/router';
+import { useEffect, useState } from 'react';
+
+const CustomLoadingScreen = () => {
+  return <h1>Loading...</h1>;
+};
 
 function MyApp({ Component, pageProps }: AppProps) {
+  const router = useRouter();
+  const [pageLoading, setPageLoading] = useState<boolean>(false);
+
+  useEffect(() => {
+    const handleStart = () => {
+      setPageLoading(true);
+    };
+    const handleComplete = () => {
+      setPageLoading(false);
+    };
+
+    router.events.on('routeChangeStart', handleStart);
+    router.events.on('routeChangeComplete', handleComplete);
+    router.events.on('routeChangeError', handleComplete);
+  }, [router]);
+
+  console.log(pageLoading);
+
+  if (pageLoading) {
+    return <CustomLoadingScreen />;
+  }
   return (
     <Layout>
       <Head>

@@ -114,8 +114,8 @@ const TopLeftBox = styled.div`
   top: ${startPoint};
   left: ${startPoint};
   opacity: 1;
-  animation: ${blink} 0.3s linear 0.5s forwards, ${topLeft} 0.3s linear 1s forwards,
-    ${topLeftExpand} 1s linear 2s forwards;
+  animation: ${blink} 0.3s linear 0.5s forwards,
+    ${topLeft} 0.3s linear 1s forwards, ${topLeftExpand} 1s linear 2s forwards;
 `;
 
 const topRight = keyframes`
@@ -150,8 +150,8 @@ const TopRightBox = styled.div`
   top: ${startPoint};
   right: ${startPoint};
   opacity: 1;
-  animation: ${blink} 0.3s linear 0.5s forwards, ${topRight} 0.3s linear 1s forwards,
-    ${topRightExpand} 1s linear 2s forwards;
+  animation: ${blink} 0.3s linear 0.5s forwards,
+    ${topRight} 0.3s linear 1s forwards, ${topRightExpand} 1s linear 2s forwards;
 `;
 
 const bottomLeft = keyframes`
@@ -184,7 +184,8 @@ const BottomLeftBox = styled.div`
   position: absolute;
   bottom: ${startPoint};
   left: ${startPoint};
-  animation: ${blink} 0.3s linear 0.5s forwards, ${bottomLeft} 0.3s linear 1s forwards,
+  animation: ${blink} 0.3s linear 0.5s forwards,
+    ${bottomLeft} 0.3s linear 1s forwards,
     ${bottomLeftExpand} 1s linear 2s forwards;
 `;
 
@@ -218,7 +219,8 @@ const BottomRightBox = styled.div`
   position: absolute;
   bottom: ${startPoint};
   right: ${startPoint};
-  animation: ${blink} 0.3s linear 0.5s forwards, ${bottomRight} 0.3s linear 1s forwards,
+  animation: ${blink} 0.3s linear 0.5s forwards,
+    ${bottomRight} 0.3s linear 1s forwards,
     ${bottomRightExpand} 1s linear 2s forwards;
 `;
 

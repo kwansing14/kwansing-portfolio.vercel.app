@@ -5,12 +5,22 @@ import Cards from '@root/components/Landing/Cards';
 import AboutMe from '@root/components/Landing/AboutMe';
 import Hero from '@root/components/Landing/Hero';
 // import Experiences from '@root/components/Landing/Experiences';
-import LoadingScreen from '@root/components/Layout/LoadingScreen';
+// import LoadingScreen from '@root/components/Layout/LoadingScreen';
+// import { useEffect, useLayoutEffect, useState } from 'react';
 
 const Home: NextPage = () => {
+  // const [timeOne, setTimeOne] = useState(0);
+
+  // useLayoutEffect(() => setTimeOne(performance.now()), []);
+
+  // useEffect(() => {
+  //   const diff = performance.now() - timeOne;
+  //   console.log(`Page loaded in ${diff / 1000} seconds.`);
+  // }, []);
+
   return (
     <>
-      <LoadingScreen />
+      {/* <LoadingScreen /> */}
       <Container id='#'>
         <div>
           <Hero />
@@ -69,4 +79,8 @@ const Container2 = styled.div`
 const SmallTitle = styled.div`
   ${styles.title2Font}
   padding-bottom: 60px;
+`;
+
+const H2 = styled.div`
+  border: 2px solid red;
 `;
