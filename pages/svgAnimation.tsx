@@ -4,7 +4,7 @@ import styles from '@root/styles';
 import { useEffect } from 'react';
 import { gsap } from 'gsap';
 
-const playground = () => {
+const SvgAnimation = () => {
   // Create a GreenSock timeline that will repeat infinitely
   const tl = gsap.timeline({
     id: 'Timeline',
@@ -46,10 +46,6 @@ const playground = () => {
   }
 
   useEffect(() => {
-    // Setup the devtools for the demo
-    // GSDevTools.create({
-    //   animation: tl,
-    // });
     document
       .querySelectorAll('.motion path, .motion line')
       .forEach((p) => tween(p));
@@ -62,7 +58,8 @@ const playground = () => {
         <div>Create the text svg from here</div>
         <div>https://www.templatemaker.nl/singlelinetext/</div>
         <div>this website has seperate characters</div>
-        <div>https://danmarshall.github.io/google-font-to-svg-path/</div>
+        <div>to clear unnecessary svg pathing</div>
+        <div>https://jakearchibald.github.io/svgomg/</div>
         <SVGcontainer>
           <KwanSingSVG3 cn='motion' />
         </SVGcontainer>
@@ -71,7 +68,7 @@ const playground = () => {
   );
 };
 
-export default playground;
+export default SvgAnimation;
 
 const Container = styled.div`
   ${styles.container}
